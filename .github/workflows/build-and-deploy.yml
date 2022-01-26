@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - next-release
+      - development
 
 env:
   PLUGIN_PATH: ${{ secrets.SSH_RC_PATH }}/wp-content/plugins/${{ github.event.repository.name }}/
@@ -37,6 +38,17 @@ jobs:
 
     - name: Build a package
       run: bash ./bin/build-zip.sh
+
+    - name: Set environment name
+      run: |
+          if [ '${{github.ref}}' = 'refs/heads/development' ]
+          then
+            echo "ENVIRONMENT=DEVELOPMENT" >> $GITHUB_ENV
+          fi
+          if [ '${{github.ref}}' = 'refs/heads/next-release' ]
+          then
+            echo "ENVIRONMENT=RELEASE_CANDIDATE" >> $GITHUB_ENV
+          fi
 
     - name: Rsync Deployment
       uses: burnett01/rsync-deployments@4.1

@@ -322,7 +322,7 @@ class Admin_Menu {
 		$handle            = 'uag-admin-settings';
 		$build_path        = UAG_ADMIN_DIR . 'assets/build/';
 		$build_url         = UAG_ADMIN_URL . 'assets/build/';
-		$script_asset_path = $build_path . 'settings-app.asset.php';
+		$script_asset_path = $build_path . 'dashboard-app.asset.php';
 		$script_info       = file_exists( $script_asset_path )
 			? include $script_asset_path
 			: array(
@@ -334,7 +334,7 @@ class Admin_Menu {
 
 		wp_register_script(
 			$handle,
-			$build_url . 'settings-app.js',
+			$build_url . 'dashboard-app.js',
 			$script_dep,
 			$script_info['version'],
 			true
@@ -342,7 +342,7 @@ class Admin_Menu {
 
 		wp_register_style(
 			$handle,
-			$build_url . 'settings-app.css',
+			$build_url . 'dashboard-app.css',
 			array(),
 			UAGB_VER
 		);

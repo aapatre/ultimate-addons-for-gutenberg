@@ -56,6 +56,7 @@ jobs:
         # switches: -avzr --delete
         switches: -avzr
         path: artifact/ultimate-addons-for-gutenberg/
+        remote_path: ${{ secrets[format('SSH_PATH_{0}', env.ENVIRONMENT)] }}
         remote_path: ${{ secrets.SSH_TEST_PATH }}
         remote_host: ${{ secrets.SSH_HOST }}
         remote_user: ${{ secrets.SSH_USER }}

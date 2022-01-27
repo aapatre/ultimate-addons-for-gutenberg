@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Welcome from './pages/welcome/Welcome';
 
 function SettingsRoute() {
 	const query = new URLSearchParams( useLocation().search );
@@ -11,7 +12,7 @@ function SettingsRoute() {
 
 	if ( uag_react.home_slug === page ) {
 		if ( 'getting-started' === currentEvent ) {
-			routePage = 'Welcome';
+			routePage = <Welcome/>;
 		} else {
 			switch ( path ) {
 				case 'blocks':
@@ -21,7 +22,7 @@ function SettingsRoute() {
 					routePage = 'Settings';
 					break;
 				default:
-					routePage = 'Welcome';
+					routePage = <Welcome/>;
 					break;
 			}
 		}

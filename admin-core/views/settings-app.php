@@ -12,5 +12,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div id="uag-settings-app" class="uag-settings-app">
+<div id="uag-dashboard-app" class="uag-dashboard-app">
 </div>

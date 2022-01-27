@@ -14,7 +14,6 @@ import settingsEvents, {
 
 /* Main Compnent */
 import './common/all-config.scss';
-import "./common/tailwindbase.scss";
 import MainSettings from '@SettingsApp/MainSettings';
 import Footer from '@SettingsApp/components/common/Footer';
 

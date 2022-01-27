@@ -462,8 +462,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2rem;
 }.w-48 {
   width: 12rem;
-}.max-w-7xl {
-  max-width: 80rem;
+}.max-w-full {
+  max-width: 100%;
 }.flex-1 {
   flex: 1 1 0%;
 }.flex-shrink-0 {
@@ -643,6 +643,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     right: auto;
     bottom: auto;
     left: auto;
+  }
+
+  .sm\:ml-8 {
+    margin-left: 2rem;
   }
 
   .sm\:ml-6 {

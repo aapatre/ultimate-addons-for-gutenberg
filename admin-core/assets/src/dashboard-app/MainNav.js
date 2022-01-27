@@ -37,7 +37,7 @@ export default function MainNav() {
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -58,7 +58,7 @@ export default function MainNav() {
                     alt="Workflow"
                   />
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
                     { menus.map( ( menu , key ) => (
                         <Link
                             index = {key}

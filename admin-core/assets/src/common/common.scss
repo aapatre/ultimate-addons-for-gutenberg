@@ -14,7 +14,9 @@
 	box-shadow: none;
 	outline: none;
 }
-
+.settings_page_uag #wpcontent {
+	padding-left: 0;
+}
 .uag-menu-page-wrapper .uag-settings-app {
 	font-family: var(--heading-font-family);
 	left: -20px;

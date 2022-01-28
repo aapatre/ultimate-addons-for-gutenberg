@@ -10,10 +10,10 @@ const FilterTabs = (props) => {
     const {
         blocksStatuses,
         updateFlag,
-        setupdateFlag
+        setupdateFlag,
+        selectedTab,
+        setselectedTab
     } = props;
-
-    const [ selectedTab, setselectedTab ] = useState( 'all' );
 
     let tabs = [
         { name: 'All', slug: 'all' },
@@ -120,14 +120,14 @@ const FilterTabs = (props) => {
                 <span className="z-0 flex shadow-sm rounded-md justify-center">
                     <button
                         type="button"
-                        className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-wpcolor text-[#fff] text-sm font-mediu focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md"
                         onClick={activateAllBlocks}
                     >
                         Activate all
                     </button>
                     <button
                         type="button"
-                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md"
                         onClick={deactivateAllBlocks}
                     >
                         Deactivate all

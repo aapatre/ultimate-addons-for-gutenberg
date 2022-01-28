@@ -7,7 +7,7 @@ const Blocks = (props) => {
 
     const [ blocksStatuses, setBlocksStatuses] = useState([]);
     const [ updateFlag, setupdateFlag] = useState( false );
-
+    const [ selectedTab, setselectedTab ] = useState( 'all' );
 
     useEffect( () => {
 		
@@ -30,8 +30,8 @@ const Blocks = (props) => {
 
     return (
         <>
-            <FilterTabs blocksStatuses={blocksStatuses} setupdateFlag={setupdateFlag} updateFlag={updateFlag} />
-            <BlockCardsGroup blocksStatuses={blocksStatuses} setupdateFlag={setupdateFlag} updateFlag={updateFlag} />
+            <FilterTabs blocksStatuses={blocksStatuses} setupdateFlag={setupdateFlag} updateFlag={updateFlag} selectedTab={selectedTab} setselectedTab={setselectedTab} />
+            <BlockCardsGroup blocksStatuses={blocksStatuses} setupdateFlag={setupdateFlag} updateFlag={updateFlag} selectedTab={selectedTab} />
         </>
     );
 };

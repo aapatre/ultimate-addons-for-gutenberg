@@ -3,7 +3,7 @@ import BlockCard from '@DashboardApp/pages/blocks/BlockCard';
 const blocksInfo = uag_react.blocks_info;
 
 const BlockCardsGroup = (props) => {
-console.log(blocksInfo);
+
     const renderBlockCards = blocksInfo.map( ( block, index ) => {
 		return <BlockCard key={ index } blockInfo={ block } />}
 	);

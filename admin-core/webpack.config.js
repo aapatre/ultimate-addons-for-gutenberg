@@ -37,6 +37,10 @@ module.exports = {
 				newPath,
 				'blocks-config/uagb-controls/'
 			),
+			'@Common': path.resolve(
+				__dirname,
+				'assets/src/common/'
+			),
 		},
 	},
 	output: {

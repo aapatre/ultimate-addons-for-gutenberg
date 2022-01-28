@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import apiFetch from '@wordpress/api-fetch';
 
 function classNames(...classes) {
 return classes.filter(Boolean).join(' ')
@@ -6,6 +7,12 @@ return classes.filter(Boolean).join(' ')
 
 const FilterTabs = (props) => {
     
+    const {
+        blocksStatuses,
+        updateFlag,
+        setupdateFlag
+    } = props;
+
     const [ selectedTab, setselectedTab ] = useState( 'all' );
 
     let tabs = [
@@ -24,6 +31,58 @@ const FilterTabs = (props) => {
         let slug = e.target.getAttribute('data-slug');
         setselectedTab(slug)
     };
+
+    const activateAllBlocks = ( e ) => {
+		
+		const value = { ...blocksStatuses };
+
+		for ( const block in blocksStatuses ) {
+			value[ block ] = 'block';
+		}
+
+		const formData = new window.FormData();
+
+		formData.append( 'action', 'uag_blocks_activation_and_deactivation' );
+		formData.append(
+			'security',
+			uag_react.blocks_activation_and_deactivation_nonce
+		);
+		formData.append( 'value', JSON.stringify( value ) );
+
+		apiFetch( {
+			url: uag_react.ajax_url,
+			method: 'POST',
+			body: formData,
+		} ).then( () => { 
+            setupdateFlag(!updateFlag);
+		} );
+	};
+
+	const deactivateAllBlocks = ( e ) => {
+		
+		const value = { ...blocksStatuses };
+
+		for ( const block in blocksStatuses ) {
+			value[ block ] = 'disabled';
+		}
+
+		const formData = new window.FormData();
+
+		formData.append( 'action', 'uag_blocks_activation_and_deactivation' );
+		formData.append(
+			'security',
+			uag_react.blocks_activation_and_deactivation_nonce
+		);
+		formData.append( 'value', JSON.stringify( value ) );
+
+		apiFetch( {
+			url: uag_react.ajax_url,
+			method: 'POST',
+			body: formData,
+		} ).then( () => { 
+            setupdateFlag(!updateFlag);
+		} );
+	};
 
     return (
         <div className="px-4 sm:px-6 lg:px-8 py-6 bg-white m-6">
@@ -61,13 +120,15 @@ const FilterTabs = (props) => {
                 <span className="z-0 flex shadow-sm rounded-md justify-center">
                     <button
                         type="button"
-                        className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-wpcolor text-[#fff] text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-wpcolor text-[#fff] text-sm font-mediu focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                        onClick={activateAllBlocks}
                     >
                         Activate all
                     </button>
                     <button
                         type="button"
-                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                        onClick={deactivateAllBlocks}
                     >
                         Deactivate all
                     </button>

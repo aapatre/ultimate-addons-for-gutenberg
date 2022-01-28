@@ -1,31 +1,12 @@
 import BlockCard from '@DashboardApp/pages/blocks/BlockCard';
-import React, { useState, useEffect } from 'react';
-import apiFetch from '@wordpress/api-fetch';
 
 const BlockCardsGroup = (props) => {
 
-    const [ blocksStatuses, setBlocksStatuses] = useState([]);
-    const [ updateFlag, setupdateFlag] = useState( false );
-
-
-    useEffect( () => {
-		
-        apiFetch( {
-            path: '/uag/v1/admin/commonsettings/',
-        } ).then( ( data ) => {
-            setBlocksStatuses(data.options.blocks_activation_and_deactivation);
-        } );
-	}, [] );
-
-    useEffect( () => {
-		
-        apiFetch( {
-            path: '/uag/v1/admin/commonsettings/',
-        } ).then( ( data ) => {
-            setBlocksStatuses(data.options.blocks_activation_and_deactivation);
-        } );
-			
-	}, [updateFlag] );
+    const {
+        blocksStatuses,
+        updateFlag,
+        setupdateFlag
+    } = props;
 
     const blocksInfo = uag_react.blocks_info;
     

@@ -1,8 +1,10 @@
+import React, { useEffect } from 'react';
 import MainNav from "./MainNav";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SettingsRoute from "./SettingsRoute";
 
 const SettingsWrap = (props) => {
+
     return (
         <Router>
             <MainNav/>

@@ -382,7 +382,7 @@ class Common_Settings extends Ajax_Base {
 	 * @return void
 	 */
 	public function blocks_activation_and_deactivation() {
-
+error_log('in blocks_activation_and_deactivation');
 		$response_data = array( 'messsage' => $this->get_error_msg( 'permission' ) );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -403,7 +403,7 @@ class Common_Settings extends Ajax_Base {
 		}
 
 		$value = isset( $_POST['value'] ) ? json_decode( stripslashes( $_POST['value'] ), true ) : array(); // phpcs:ignore
-
+error_log(print_r($value,true));
 		\UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $this->sanitize_form_inputs( $value ) );
 
 		if ( 'disabled' === \UAGB_Helper::$file_generation ) {

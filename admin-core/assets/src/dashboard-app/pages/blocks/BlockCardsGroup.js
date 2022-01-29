@@ -1,12 +1,12 @@
 import BlockCard from '@DashboardApp/pages/blocks/BlockCard';
+import { connect } from "react-redux";
 
 const BlockCardsGroup = (props) => {
 
     const {
         blocksStatuses,
-        updateFlag,
-        setupdateFlag,
-        selectedTab
+        updateBlockStatuses,
+        activeFilterTab
     } = props;
 
     const blocksInfo = uag_react.blocks_info;
@@ -14,13 +14,13 @@ const BlockCardsGroup = (props) => {
     const renderBlockCards = blocksInfo.map( ( block, index ) => {
 
         let blockCategories = block['admin_categories'];
-        let showBlockCard = blockCategories.includes(selectedTab) || 'all' === selectedTab;
+        let showBlockCard = blockCategories.includes(activeFilterTab) || 'all' === activeFilterTab;
 
         if ( ! showBlockCard ) {
             return '';
         }
 
-		return <BlockCard key={ index } blockInfo={ block } blocksStatuses={ blocksStatuses[block.slug] ? blocksStatuses[block.slug] : 'disabled'} setupdateFlag={setupdateFlag} updateFlag={updateFlag} />}
+		return <BlockCard key={ index } blockInfo={ block } blocksStatuses={ blocksStatuses[block.slug] ? blocksStatuses[block.slug] : 'disabled'} updateBlockStatuses={updateBlockStatuses} />}
 	);
     
     return (
@@ -30,4 +30,16 @@ const BlockCardsGroup = (props) => {
     );
 };
 
-export default BlockCardsGroup;
+const MapStateToProps = (state) => {
+    return {
+        blocksStatuses: state.blocksStatuses,
+        activeFilterTab: state.activeFilterTab,
+    };
+};
+const MapDispatchToProps = (dispatch) => {
+    return {
+        updateBlockStatuses: (blocksStatuses)=> dispatch({type:'UPDATE_BLOCK_STATUSES', payload: blocksStatuses}),
+    }
+}; 
+
+export default connect(MapStateToProps, MapDispatchToProps)(BlockCardsGroup);

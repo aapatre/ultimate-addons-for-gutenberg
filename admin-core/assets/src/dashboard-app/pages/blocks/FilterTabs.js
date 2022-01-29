@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import apiFetch from '@wordpress/api-fetch';
+import { connect } from "react-redux";
 
 function classNames(...classes) {
 return classes.filter(Boolean).join(' ')
 }
 
 const FilterTabs = (props) => {
-    
+
     const {
         blocksStatuses,
-        updateFlag,
-        setupdateFlag,
-        selectedTab,
-        setselectedTab
+        updateBlockStatuses,
+        activeFilterTab,
+        updateActiveFilterTab
     } = props;
 
     let tabs = [
@@ -26,12 +26,6 @@ const FilterTabs = (props) => {
         { name: 'Extensions', slug: 'extensions' },
     ];
 
-    const tabClickHandler = (e) => {
-        e.preventDefault();
-        let slug = e.target.getAttribute('data-slug');
-        setselectedTab(slug)
-    };
-
     const activateAllBlocks = ( e ) => {
 		
 		const value = { ...blocksStatuses };
@@ -39,6 +33,8 @@ const FilterTabs = (props) => {
 		for ( const block in blocksStatuses ) {
 			value[ block ] = 'block';
 		}
+
+        updateBlockStatuses(value);
 
 		const formData = new window.FormData();
 
@@ -53,8 +49,7 @@ const FilterTabs = (props) => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( () => { 
-            setupdateFlag(!updateFlag);
+		} ).then( () => {
 		} );
 	};
 
@@ -66,6 +61,8 @@ const FilterTabs = (props) => {
 			value[ block ] = 'disabled';
 		}
 
+        updateBlockStatuses(value);
+
 		const formData = new window.FormData();
 
 		formData.append( 'action', 'uag_blocks_activation_and_deactivation' );
@@ -79,8 +76,7 @@ const FilterTabs = (props) => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( () => { 
-            setupdateFlag(!updateFlag);
+		} ).then( () => {
 		} );
 	};
 
@@ -107,10 +103,10 @@ const FilterTabs = (props) => {
                     <a
                         key={tab.name}
                         className={classNames(
-                        tab.slug === selectedTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
+                        tab.slug === activeFilterTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
                         'px-3 py-2 font-medium text-sm rounded-md cursor-pointer'
                         )}
-                        onClick={tabClickHandler}
+                        onClick={ () => updateActiveFilterTab(tab.slug)}
                         data-slug = { tab.slug}
                     >
                         {tab.name}
@@ -137,4 +133,17 @@ const FilterTabs = (props) => {
         </div>
     );
 };
-export default FilterTabs;
+
+const MapStateToProps = (state) => {
+    return {
+        activeFilterTab: state.activeFilterTab,
+        blocksStatuses: state.blocksStatuses
+    };
+};
+const MapDispatchToProps = (dispatch) => {
+    return {
+        updateActiveFilterTab: (activeTab)=> dispatch({type:'UPDATE_ACTIVE_FILTER_TAB', payload: activeTab}),
+        updateBlockStatuses: (blocksStatuses)=> dispatch({type:'UPDATE_BLOCK_STATUSES', payload: blocksStatuses}),
+    }
+};
+export default connect(MapStateToProps, MapDispatchToProps)(FilterTabs);

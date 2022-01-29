@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 /* Main Compnent */
 import './common/all-config.scss';
 import SettingsWrap from '@DashboardApp/SettingsWrap';
+import { Provider } from "react-redux";
+import globalDataStore from '@Admin/store/globalDataStore';
+import setInitialBlocksStatuses  from '@Utils/setInitialBlocksStatuses';
+
+setInitialBlocksStatuses( globalDataStore );
 
 ReactDOM.render(
-	<SettingsWrap/>,
+	<Provider store={globalDataStore}>
+		<SettingsWrap/>
+	</Provider>,
 	document.getElementById( 'uag-dashboard-app' )
 );

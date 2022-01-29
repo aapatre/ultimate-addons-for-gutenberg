@@ -1,6 +1,5 @@
 import UAGB_Block_Icons from '@Common/block-icons';
 import { Switch } from '@headlessui/react'
-import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 
 function classNames(...classes) {
@@ -16,7 +15,8 @@ const BlockCard = (props) => {
     } = props.blockInfo;
 
     const {
-        blocksStatuses
+        blocksStatuses,
+        updateBlockStatuses
     } = props;
 
 
@@ -32,6 +32,8 @@ const BlockCard = (props) => {
 
         let optionsClone = { ...blocksStatuses };
         optionsClone[ slug ] = status;
+
+        updateBlockStatuses(optionsClone);
 
         const formData = new window.FormData();
 
@@ -50,7 +52,6 @@ const BlockCard = (props) => {
             method: 'POST',
             body: formData,
         } ).then( () => {
-            props.setupdateFlag(!props.updateFlag);
         } );
     };
 

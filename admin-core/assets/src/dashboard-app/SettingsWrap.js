@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import MainNav from "./MainNav";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SettingsRoute from "./SettingsRoute";

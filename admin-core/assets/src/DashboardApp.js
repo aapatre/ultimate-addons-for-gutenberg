@@ -7,7 +7,12 @@ import { Provider } from "react-redux";
 import globalDataStore from '@Admin/store/globalDataStore';
 import setInitialBlocksStatuses  from '@Utils/setInitialBlocksStatuses';
 
-setInitialBlocksStatuses( globalDataStore );
+let currentState = globalDataStore.getState();
+
+if ( ! currentState.blocksStatuses || 0 === currentState.blocksStatuses.length ) {
+
+	setInitialBlocksStatuses( globalDataStore );
+}
 
 ReactDOM.render(
 	<Provider store={globalDataStore}>

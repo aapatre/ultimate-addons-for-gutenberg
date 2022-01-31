@@ -1,6 +1,7 @@
 import UAGB_Block_Icons from '@Common/block-icons';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
+import { useSelector, useDispatch } from 'react-redux';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -14,13 +15,11 @@ const BlockCard = (props) => {
         title,
     } = props.blockInfo;
 
-    const {
-        blocksStatuses,
-        updateBlockStatuses
-    } = props;
+    const dispatch = useDispatch();
 
+    const blocksStatuses = useSelector( (state) => state.blocksStatuses ); 
 
-    let blockActivationStatus = 'disabled' === blocksStatuses ? false : true;
+    let blockActivationStatus = 'disabled' === blocksStatuses[slug] ? false : true;
 
     const updateBlockStatus = () => {
 
@@ -33,8 +32,8 @@ const BlockCard = (props) => {
         let optionsClone = { ...blocksStatuses };
         optionsClone[ slug ] = status;
 
-        updateBlockStatuses(optionsClone);
-
+        dispatch({type:'UPDATE_BLOCK_STATUSES', payload: optionsClone});
+       
         const formData = new window.FormData();
 
         formData.append(

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import apiFetch from '@wordpress/api-fetch';
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
 
 function classNames(...classes) {
 return classes.filter(Boolean).join(' ')
@@ -8,12 +8,10 @@ return classes.filter(Boolean).join(' ')
 
 const FilterTabs = (props) => {
 
-    const {
-        blocksStatuses,
-        updateBlockStatuses,
-        activeFilterTab,
-        updateActiveFilterTab
-    } = props;
+    const dispatch = useDispatch();
+
+    const blocksStatuses = useSelector( (state) => state.blocksStatuses );
+    const activeFilterTab = useSelector( (state) => state.activeFilterTab );
 
     let tabs = [
         { name: 'All', slug: 'all' },
@@ -34,7 +32,7 @@ const FilterTabs = (props) => {
 			value[ block ] = 'block';
 		}
 
-        updateBlockStatuses(value);
+        dispatch({type:'UPDATE_BLOCK_STATUSES', payload: value});
 
 		const formData = new window.FormData();
 
@@ -61,7 +59,7 @@ const FilterTabs = (props) => {
 			value[ block ] = 'disabled';
 		}
 
-        updateBlockStatuses(value);
+        dispatch({type:'UPDATE_BLOCK_STATUSES', payload: value});
 
 		const formData = new window.FormData();
 
@@ -106,7 +104,7 @@ const FilterTabs = (props) => {
                         tab.slug === activeFilterTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
                         'px-3 py-2 font-medium text-sm rounded-md cursor-pointer'
                         )}
-                        onClick={ () => updateActiveFilterTab(tab.slug)}
+                        onClick={ () => dispatch({type:'UPDATE_ACTIVE_FILTER_TAB', payload: tab.slug}) }
                         data-slug = { tab.slug}
                     >
                         {tab.name}
@@ -134,16 +132,4 @@ const FilterTabs = (props) => {
     );
 };
 
-const MapStateToProps = (state) => {
-    return {
-        activeFilterTab: state.activeFilterTab,
-        blocksStatuses: state.blocksStatuses
-    };
-};
-const MapDispatchToProps = (dispatch) => {
-    return {
-        updateActiveFilterTab: (activeTab)=> dispatch({type:'UPDATE_ACTIVE_FILTER_TAB', payload: activeTab}),
-        updateBlockStatuses: (blocksStatuses)=> dispatch({type:'UPDATE_BLOCK_STATUSES', payload: blocksStatuses}),
-    }
-};
-export default connect(MapStateToProps, MapDispatchToProps)(FilterTabs);
+export default FilterTabs;

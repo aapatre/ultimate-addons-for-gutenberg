@@ -1,13 +1,9 @@
 import BlockCard from '@DashboardApp/pages/blocks/BlockCard';
-import { connect } from "react-redux";
+import { useSelector } from 'react-redux';
 
-const BlockCardsGroup = (props) => {
+const BlockCardsGroup = () => {
 
-    const {
-        blocksStatuses,
-        updateBlockStatuses,
-        activeFilterTab
-    } = props;
+    const activeFilterTab = useSelector( (state) => state.activeFilterTab );
 
     const blocksInfo = uag_react.blocks_info;
     
@@ -20,7 +16,7 @@ const BlockCardsGroup = (props) => {
             return '';
         }
 
-		return <BlockCard key={ index } blockInfo={ block } blocksStatuses={ blocksStatuses[block.slug] ? blocksStatuses[block.slug] : 'disabled'} updateBlockStatuses={updateBlockStatuses} />}
+		return <BlockCard key={ index } blockInfo={ block } />}
 	);
     
     return (
@@ -42,4 +38,4 @@ const MapDispatchToProps = (dispatch) => {
     }
 }; 
 
-export default connect(MapStateToProps, MapDispatchToProps)(BlockCardsGroup);
+export default BlockCardsGroup;

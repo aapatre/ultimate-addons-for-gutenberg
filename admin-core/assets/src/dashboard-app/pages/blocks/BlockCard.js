@@ -82,7 +82,7 @@ const BlockCard = (props) => {
                     'pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
                     )}
                 />
-                </Switch>
+            </Switch>
         </div>
     );
 };

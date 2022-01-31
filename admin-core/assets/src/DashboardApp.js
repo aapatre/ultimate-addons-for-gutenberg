@@ -5,13 +5,13 @@ import './common/all-config.scss';
 import SettingsWrap from '@DashboardApp/SettingsWrap';
 import { Provider } from "react-redux";
 import globalDataStore from '@Admin/store/globalDataStore';
-import setInitialBlocksStatuses  from '@Utils/setInitialBlocksStatuses';
+import setInitialState  from '@Utils/setInitialState';
 
 let currentState = globalDataStore.getState();
 
-if ( ! currentState.blocksStatuses || 0 === currentState.blocksStatuses.length ) {
+if ( ! currentState.initialStateSetFlag ) {
 
-	setInitialBlocksStatuses( globalDataStore );
+	setInitialState( globalDataStore );
 }
 
 ReactDOM.render(

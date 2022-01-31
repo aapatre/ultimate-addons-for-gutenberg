@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Welcome from './pages/welcome/Welcome';
 import Blocks from '@DashboardApp/pages/blocks/Blocks';
+import Settings from '@DashboardApp/pages/settings/Settings';
 
 function SettingsRoute() {
 	const query = new URLSearchParams( useLocation().search );
@@ -20,7 +21,7 @@ function SettingsRoute() {
 					routePage = <Blocks/>;
 					break;
 				case 'settings':
-					routePage = 'Settings';
+					routePage = <Settings/>;
 					break;
 				default:
 					routePage = <Welcome/>;

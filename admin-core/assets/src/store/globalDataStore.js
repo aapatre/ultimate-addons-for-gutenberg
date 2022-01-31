@@ -2,8 +2,12 @@ import { createStore } from 'redux';
 import globalDataReducer from './globalDataReducer';
 
 const initialState = {
-    'activeFilterTab' : 'all',
-    'blocksStatuses' : []
+    'initialStateSetFlag' : false,
+    'activeBlocksFilterTab' : 'all',
+    'activeSettingsNavigationTab' : 'asset-generation',
+    'blocksStatuses' : [],
+    'enableFileGeneration' : '',
+    'enableTemplates' : '',
 };
 
 const globalDataStore = createStore(

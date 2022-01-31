@@ -11,7 +11,7 @@ const FilterTabs = (props) => {
     const dispatch = useDispatch();
 
     const blocksStatuses = useSelector( (state) => state.blocksStatuses );
-    const activeFilterTab = useSelector( (state) => state.activeFilterTab );
+    const activeBlocksFilterTab = useSelector( (state) => state.activeBlocksFilterTab );
 
     let tabs = [
         { name: 'All', slug: 'all' },
@@ -101,11 +101,10 @@ const FilterTabs = (props) => {
                     <a
                         key={tab.name}
                         className={classNames(
-                        tab.slug === activeFilterTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
+                        tab.slug === activeBlocksFilterTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
                         'px-3 py-2 font-medium text-sm rounded-md cursor-pointer'
                         )}
-                        onClick={ () => dispatch({type:'UPDATE_ACTIVE_FILTER_TAB', payload: tab.slug}) }
-                        data-slug = { tab.slug}
+                        onClick={ () => dispatch({type:'UPDATE_BLOCKS_ACTIVE_FILTER_TAB', payload: tab.slug}) }
                     >
                         {tab.name}
                     </a>

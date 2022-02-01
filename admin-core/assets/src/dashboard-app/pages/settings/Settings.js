@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import AssetsGeneration from '@DashboardApp/pages/settings/AssetsGeneration';
 import RegenerateAssets from '@DashboardApp/pages/settings/RegenerateAssets';
 import TemplatesButton from '@DashboardApp/pages/settings/TemplatesButton';
+import RollBack from './RollBack';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -68,6 +69,11 @@ const Settings = () => {
                     }
                     { 'templates' === activeSettingsNavigationTab && 
                         <TemplatesButton/>
+                    }
+                    { 'version-control' === activeSettingsNavigationTab && 
+                        <>
+                            <RollBack/>
+                        </>
                     }
                 </div>
             </div>

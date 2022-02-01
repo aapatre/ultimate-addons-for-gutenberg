@@ -79,7 +79,7 @@ const FilterTabs = () => {
 	};
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8 py-6 bg-white m-6">
+        <div className="px-4 sm:px-6 lg:px-8 py-6 bg-white m-6 rounded-md">
             <div className="sm:hidden">
             <label htmlFor="tabs" className="sr-only">
                 Select a tab
@@ -113,14 +113,14 @@ const FilterTabs = () => {
                 <span className="z-0 flex shadow-sm rounded-md justify-center">
                     <button
                         type="button"
-                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md"
+                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none rounded-l-md"
                         onClick={activateAllBlocks}
                     >
                         Activate all
                     </button>
                     <button
                         type="button"
-                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md"
+                        className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-70 focus:z-10 focus:outline-none rounded-r-md"
                         onClick={deactivateAllBlocks}
                     >
                         Deactivate all

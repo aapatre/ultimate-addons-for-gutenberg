@@ -14,6 +14,7 @@ import RegenerateAssets from '@DashboardApp/pages/settings/RegenerateAssets';
 import TemplatesButton from '@DashboardApp/pages/settings/TemplatesButton';
 import RollBack from '@DashboardApp/pages/settings/RollBack';
 import BetaUpdates from '@DashboardApp/pages/settings/BetaUpdates';
+import SelectedFontFamilies from '@DashboardApp/pages/settings/SelectedFontFamilies';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -29,7 +30,7 @@ const Settings = () => {
         { name: __( 'Asset Generation', 'ultimate-addons-for-gutenberg' ), slug: 'asset-generation', icon: UserCircleIcon },
         { name: __( 'Templates', 'ultimate-addons-for-gutenberg' ), slug: 'templates', icon: KeyIcon },
         { name: __( 'Version Control', 'ultimate-addons-for-gutenberg' ), slug: 'version-control', icon: BellIcon },
-        { name: __( 'Font Family and Performance', 'ultimate-addons-for-gutenberg' ), slug: 'fonts-performance', icon: CreditCardIcon },
+        { name: __( 'Performance', 'ultimate-addons-for-gutenberg' ), slug: 'fonts-performance', icon: CreditCardIcon },
         { name: __( 'Global Settings', 'ultimate-addons-for-gutenberg' ), slug: 'global-settings', icon: ViewGridAddIcon },
       ];
 
@@ -75,6 +76,11 @@ const Settings = () => {
                         <>
                             <RollBack/>
                             <BetaUpdates/>
+                        </>
+                    }
+                    { 'fonts-performance' === activeSettingsNavigationTab &&
+                        <>
+                            <SelectedFontFamilies/>
                         </>
                     }
                 </div>

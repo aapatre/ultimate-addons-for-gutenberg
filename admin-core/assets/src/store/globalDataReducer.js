@@ -35,6 +35,16 @@ const globalDataReducer = ( state = {}, action ) => {
                 ...state,
                 enableBeta: action.payload,
             };
+        case "UPDATE_ENABLE_SELECTED_FONT_FAMILIES":
+            return {
+                ...state,
+                enableSelectedFontFamilies: action.payload,
+            };
+        case "UPDATE_SELECTED_FONT_FAMILIES":
+            return {
+                ...state,
+                selectedFontFamilies: action.payload,
+            };
         default:
             return state;
     }

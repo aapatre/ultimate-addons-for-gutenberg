@@ -8,7 +8,9 @@ const initialState = {
     'blocksStatuses' : [],
     'enableFileGeneration' : '',
     'enableTemplates' : '',
-    'enableBeta' : ''
+    'enableBeta' : '',
+    'enableSelectedFontFamilies' : '',
+    'selectedFontFamilies' : '',
 };
 
 const globalDataStore = createStore(

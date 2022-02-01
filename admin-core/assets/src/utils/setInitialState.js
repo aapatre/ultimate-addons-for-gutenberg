@@ -8,6 +8,7 @@ const setInitialState = (store) => {
         store.dispatch({type: 'UPDATE_BLOCK_STATUSES', payload: data.options.blocks_activation_and_deactivation});
         store.dispatch({type: 'UPDATE_FILE_GENERATION', payload: data.options.enable_file_generation});
         store.dispatch({type: 'UPDATE_TEMPLATES_BUTTON', payload: data.options.enable_templates_button});
+        store.dispatch({type: 'UPDATE_BETA', payload: data.options.enable_beta_updates});
         store.dispatch({type: 'UPDATE_INITIAL_STATE_FLAG', payload: true});
     } );
 };

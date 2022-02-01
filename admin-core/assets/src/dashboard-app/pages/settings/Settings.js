@@ -12,7 +12,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import AssetsGeneration from '@DashboardApp/pages/settings/AssetsGeneration';
 import RegenerateAssets from '@DashboardApp/pages/settings/RegenerateAssets';
 import TemplatesButton from '@DashboardApp/pages/settings/TemplatesButton';
-import RollBack from './RollBack';
+import RollBack from '@DashboardApp/pages/settings/RollBack';
+import BetaUpdates from '@DashboardApp/pages/settings/BetaUpdates';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -73,6 +74,7 @@ const Settings = () => {
                     { 'version-control' === activeSettingsNavigationTab && 
                         <>
                             <RollBack/>
+                            <BetaUpdates/>
                         </>
                     }
                 </div>

@@ -30,6 +30,11 @@ const globalDataReducer = ( state = {}, action ) => {
                 ...state,
                 enableTemplates: action.payload,
             };
+        case "UPDATE_BETA":
+            return {
+                ...state,
+                enableBeta: action.payload,
+            };
         default:
             return state;
     }

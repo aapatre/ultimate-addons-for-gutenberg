@@ -8,6 +8,7 @@ const initialState = {
     'blocksStatuses' : [],
     'enableFileGeneration' : '',
     'enableTemplates' : '',
+    'enableBeta' : ''
 };
 
 const globalDataStore = createStore(

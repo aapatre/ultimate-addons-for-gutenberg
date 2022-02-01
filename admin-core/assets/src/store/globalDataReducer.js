@@ -65,6 +65,10 @@ const globalDataReducer = ( state = {}, action ) => {
                 ...state,
                 enableCopyPasteStyles: action.payload,
             };
+        case "UPDATE_INITIAL_STATE":
+            return {
+                ...action.payload,
+            };
         default:
             return state;
     }

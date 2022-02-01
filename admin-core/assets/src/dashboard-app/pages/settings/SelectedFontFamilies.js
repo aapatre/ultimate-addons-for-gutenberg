@@ -49,7 +49,6 @@ const SelectedFontFamilies = () => {
 			method: 'POST',
 			body: formData,
 		} ).then( ( data ) => {
-            console.log(data);
 		} );
     };
 

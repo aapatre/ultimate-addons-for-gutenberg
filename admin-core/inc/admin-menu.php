@@ -161,7 +161,7 @@ class Admin_Menu {
 	public function render_content( $menu_page_slug, $page_action ) {
 
 		if ( $this->menu_slug === $menu_page_slug ) {
-			include_once UAG_ADMIN_DIR . 'views/settings-app.php';
+			include_once UAG_ADMIN_DIR . 'views/dashboard-app.php';
 		}
 	}
 

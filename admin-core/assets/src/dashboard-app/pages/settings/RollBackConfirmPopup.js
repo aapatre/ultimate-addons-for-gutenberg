@@ -9,7 +9,8 @@ const RollBackConfirmPopup = (props) => {
     const {
         openPopup,
         setopenPopup,
-        previousVersionSelect
+        previousVersionSelect,
+        setconfirmPopup
     } = props;
 
     const [open, setOpen] = useState(openPopup);
@@ -32,6 +33,7 @@ const RollBackConfirmPopup = (props) => {
 		);
 
 		setopenPopup( false );
+        setconfirmPopup( true );
 
 		window.location.href = rollbackUrl;
     };

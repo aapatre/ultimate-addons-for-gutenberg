@@ -1,5 +1,4 @@
 import { Disclosure } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link, useLocation } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
 
@@ -37,8 +36,6 @@ export default function MainNav() {
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
-      {( { open } ) => (
-        <>
           <div className="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex justify-between h-16">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -82,8 +79,6 @@ export default function MainNav() {
               </div>
             </div>
           </div>
-        </>
-      )}
     </Disclosure>
   )
 }

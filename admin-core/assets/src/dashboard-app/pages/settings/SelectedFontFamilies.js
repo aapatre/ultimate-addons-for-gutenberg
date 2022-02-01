@@ -83,22 +83,20 @@ const SelectedFontFamilies = () => {
                 <p className="mt-1 text-sm text-gray-500">
                     { __( 'Now you can set multiple global font families for all UAG blocks by Enabling "Display Selected Font Families" option. Also, It will not list the unsed fonts in your blocks controls.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
-                <div>
-                    <p className="mt-3 text-sm text-gray-500">
-                        { __( 'You can get all the selected families in typography component of each block.', 'ultimate-addons-for-gutenberg' ) }
-                    </p>
-                    <Select
-                        isMulti
-                        placeholder={ __( 'Select the font families you want' ) }
-                        defaultValue = { selectedFontFamilies }
-                        onChange={ ( value ) => updateSelectedFontFamilies( value ) }
-                        options={ fonts }
-                        maxMenuHeight={ 140 }
-                        minMenuHeight = { 70 }
-                        isSearchable={true}
-                        className="mt-2"
-                    />
-                </div>
+                <p className="mt-3 text-sm text-gray-500">
+                    { __( 'You can get all the selected families in typography component of each block.', 'ultimate-addons-for-gutenberg' ) }
+                </p>
+                <Select
+                    isMulti
+                    placeholder={ __( 'Select the font families you want' ) }
+                    defaultValue = { selectedFontFamilies }
+                    onChange={ ( value ) => updateSelectedFontFamilies( value ) }
+                    options={ fonts }
+                    maxMenuHeight={ 140 }
+                    minMenuHeight = { 70 }
+                    isSearchable={true}
+                    className={`mt-2 uag-font-select-${enableSelectedFontFamilies}`}
+                />
             </div>
             <div>
                 <Switch

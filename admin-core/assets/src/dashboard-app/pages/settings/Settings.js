@@ -15,6 +15,10 @@ import TemplatesButton from '@DashboardApp/pages/settings/TemplatesButton';
 import RollBack from '@DashboardApp/pages/settings/RollBack';
 import BetaUpdates from '@DashboardApp/pages/settings/BetaUpdates';
 import SelectedFontFamilies from '@DashboardApp/pages/settings/SelectedFontFamilies';
+import LoadFontsLocally from '@DashboardApp/pages/settings/LoadFontsLocally';
+import PreloadLocalFonts from '@DashboardApp/pages/settings/PreloadLocalFonts';
+import CollapsePanels from '@DashboardApp/pages/settings/CollapsePanels';
+import CopyPasteStyles from '@DashboardApp/pages/settings/CopyPasteStyles';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -81,6 +85,14 @@ const Settings = () => {
                     { 'fonts-performance' === activeSettingsNavigationTab &&
                         <>
                             <SelectedFontFamilies/>
+                            <LoadFontsLocally/>
+                            <PreloadLocalFonts/>
+                        </>
+                    }
+                    { 'global-settings' === activeSettingsNavigationTab &&
+                        <>
+                            <CollapsePanels/>
+                            <CopyPasteStyles/>
                         </>
                     }
                 </div>

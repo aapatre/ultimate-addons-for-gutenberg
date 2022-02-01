@@ -11,6 +11,10 @@ const initialState = {
     'enableBeta' : '',
     'enableSelectedFontFamilies' : '',
     'selectedFontFamilies' : '',
+    'enableLoadFontsLocally' : '',
+    'enablePreloadLocalFonts' : '',
+    'enableCollapsePanels' : '',
+    'enableCopyPasteStyles' : '',
 };
 
 const globalDataStore = createStore(

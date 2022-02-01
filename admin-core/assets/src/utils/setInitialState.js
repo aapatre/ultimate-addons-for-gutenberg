@@ -11,6 +11,10 @@ const setInitialState = (store) => {
         store.dispatch({type: 'UPDATE_BETA', payload: data.options.enable_beta_updates});
         store.dispatch({type: 'UPDATE_ENABLE_SELECTED_FONT_FAMILIES', payload: data.options.load_select_font_globally});
         store.dispatch({type: 'UPDATE_SELECTED_FONT_FAMILIES', payload: data.options.select_font_globally});
+        store.dispatch({type: 'UPDATE_ENABLE_LOAD_FONTS_LOCALLY', payload: data.options.load_gfonts_locally});
+        store.dispatch({type: 'UPDATE_ENABLE_PRELOAD_LOCAL_FONTS', payload: data.options.preload_local_fonts});
+        store.dispatch({type: 'UPDATE_ENABLE_COLLAPSE_PANELS', payload: data.options.collapse_panels});
+        store.dispatch({type: 'UPDATE_ENABLE_COPY_PASTE_STYLES', payload: data.options.copy_paste});
         store.dispatch({type: 'UPDATE_INITIAL_STATE_FLAG', payload: true});
     } );
 };

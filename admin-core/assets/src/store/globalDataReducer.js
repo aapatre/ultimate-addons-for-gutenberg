@@ -45,6 +45,26 @@ const globalDataReducer = ( state = {}, action ) => {
                 ...state,
                 selectedFontFamilies: action.payload,
             };
+        case "UPDATE_ENABLE_LOAD_FONTS_LOCALLY":
+            return {
+                ...state,
+                enableLoadFontsLocally: action.payload,
+            };
+        case "UPDATE_ENABLE_PRELOAD_LOCAL_FONTS":
+            return {
+                ...state,
+                enablePreloadLocalFonts: action.payload,
+            };
+        case "UPDATE_ENABLE_COLLAPSE_PANELS":
+            return {
+                ...state,
+                enableCollapsePanels: action.payload,
+            };
+        case "UPDATE_ENABLE_COPY_PASTE_STYLES":
+            return {
+                ...state,
+                enableCopyPasteStyles: action.payload,
+            };
         default:
             return state;
     }

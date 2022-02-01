@@ -161,3 +161,7 @@
 	background: var(--background-light-color);
 }
 
+.uag-font-select-disabled {
+	pointer-events: none;
+    opacity: 0.4;
+}

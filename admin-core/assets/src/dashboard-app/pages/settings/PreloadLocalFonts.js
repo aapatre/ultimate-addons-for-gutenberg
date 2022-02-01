@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const PreloadLocalFonts = () => {
 
     const dispatch = useDispatch();
 
-    const enableLoadFontsLocally = useSelector( (state) => state.enableLoadFontsLocally );
-    const enablePreloadLocalFonts = useSelector( (state) => state.enablePreloadLocalFonts );
+    const enableLoadFontsLocally = useSelector( ( state ) => state.enableLoadFontsLocally );
+    const enablePreloadLocalFonts = useSelector( ( state ) => state.enablePreloadLocalFonts );
 
     const enablePreloadLocalFontsStatus = 'disabled' === enablePreloadLocalFonts ? false : true;
 
@@ -25,7 +25,7 @@ const PreloadLocalFonts = () => {
             assetStatus = 'disabled';
 		}
         
-        dispatch({type: 'UPDATE_ENABLE_PRELOAD_LOCAL_FONTS', payload: assetStatus });
+        dispatch( {type: 'UPDATE_ENABLE_PRELOAD_LOCAL_FONTS', payload: assetStatus } );
 
 		const formData = new window.FormData();
 
@@ -40,7 +40,7 @@ const PreloadLocalFonts = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 

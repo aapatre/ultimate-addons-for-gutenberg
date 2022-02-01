@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const CopyPasteStyles = () => {
 
     const dispatch = useDispatch();
 
-    const enableCopyPasteStyles = useSelector( (state) => state.enableCopyPasteStyles );
+    const enableCopyPasteStyles = useSelector( ( state ) => state.enableCopyPasteStyles );
     const enableCopyPasteStylesStatus = 'disabled' === enableCopyPasteStyles ? false : true;
 
     const updateEnableCopyPasteStylesStatus = () => {
@@ -23,7 +23,7 @@ const CopyPasteStyles = () => {
             assetStatus = 'disabled';
 		}
         
-        dispatch({type: 'UPDATE_ENABLE_COPY_PASTE_STYLES', payload: assetStatus });
+        dispatch( {type: 'UPDATE_ENABLE_COPY_PASTE_STYLES', payload: assetStatus } );
 
 		const formData = new window.FormData();
 
@@ -35,7 +35,7 @@ const CopyPasteStyles = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 

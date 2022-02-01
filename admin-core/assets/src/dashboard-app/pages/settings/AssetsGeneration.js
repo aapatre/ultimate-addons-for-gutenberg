@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const AssetsGeneration = () => {
 
     const dispatch = useDispatch();
 
-    const enableFileGeneration = useSelector( (state) => state.enableFileGeneration );
+    const enableFileGeneration = useSelector( ( state ) => state.enableFileGeneration );
     const fileGenerationStatus = 'disabled' === enableFileGeneration ? false : true;
 
     const updateFileGenerationStatus = () => {
@@ -23,7 +23,7 @@ const AssetsGeneration = () => {
             assetStatus = 'disabled';
 		}
         
-        dispatch({type: 'UPDATE_FILE_GENERATION', payload: assetStatus });
+        dispatch( {type: 'UPDATE_FILE_GENERATION', payload: assetStatus } );
 
 		const action = 'uag_enable_file_generation',
 			nonce = uag_react.enable_file_generation_nonce;
@@ -38,7 +38,7 @@ const AssetsGeneration = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 

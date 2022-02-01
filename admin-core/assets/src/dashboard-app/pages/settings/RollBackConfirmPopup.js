@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 import { __ } from '@wordpress/i18n';
 
-const RollBackConfirmPopup = (props) => {
+const RollBackConfirmPopup = ( props ) => {
 
     const {
         openPopup,
@@ -13,16 +13,16 @@ const RollBackConfirmPopup = (props) => {
         setconfirmPopup
     } = props;
 
-    const [open, setOpen] = useState(openPopup);
+    const [open, setOpen] = useState( openPopup );
 
-    const cancelButtonRef = useRef(null);
+    const cancelButtonRef = useRef( null );
 
-    useEffect(() => {
-        setOpen(openPopup);
-    }, [openPopup]);
+    useEffect( () => {
+        setOpen( openPopup );
+    }, [openPopup] );
 
     const onCancelClick = () => {
-        setopenPopup(!openPopup);
+        setopenPopup( !openPopup );
     };
 
     const onContinueClick = () => {
@@ -78,7 +78,10 @@ const RollBackConfirmPopup = (props) => {
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                        { __( `Are you sure you want to rollback to UAG v${previousVersionSelect}?`, 'ultimate-addons-for-gutenberg' ) }
+                        { 
+                          // eslint-disable-next-line @wordpress/i18n-no-variables
+                          __( `Are you sure you want to rollback to UAG v${previousVersionSelect}?`, 'ultimate-addons-for-gutenberg' ) 
+                        }
                         </p>
                       </div>
                     </div>

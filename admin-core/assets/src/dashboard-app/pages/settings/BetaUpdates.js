@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const BetaUpdates = () => {
 
     const dispatch = useDispatch();
 
-    const enableBeta = useSelector( (state) => state.enableBeta );
+    const enableBeta = useSelector( ( state ) => state.enableBeta );
     const enableBetaStatus = 'no' === enableBeta ? false : true;
 
     const updateEnableBetaStatus = () => {
@@ -23,7 +23,7 @@ const BetaUpdates = () => {
             assetStatus = 'no';
 		}
         
-        dispatch({type: 'UPDATE_BETA', payload: assetStatus });
+        dispatch( {type: 'UPDATE_BETA', payload: assetStatus } );
 
 		const formData = new window.FormData();
 
@@ -35,7 +35,7 @@ const BetaUpdates = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 

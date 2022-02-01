@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-const Welcome = (props) => {
+const Welcome = () => {
 
     return(
         <main className="py-6">

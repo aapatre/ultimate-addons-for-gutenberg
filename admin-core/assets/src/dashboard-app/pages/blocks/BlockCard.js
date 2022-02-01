@@ -3,11 +3,11 @@ import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 import { useSelector, useDispatch } from 'react-redux';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
-const BlockCard = (props) => {
+const BlockCard = ( props ) => {
 
     const {
         link,
@@ -17,9 +17,9 @@ const BlockCard = (props) => {
 
     const dispatch = useDispatch();
 
-    const blocksStatuses = useSelector( (state) => state.blocksStatuses ); 
+    const blocksStatuses = useSelector( ( state ) => state.blocksStatuses ); 
 
-    let blockActivationStatus = 'disabled' === blocksStatuses[slug] ? false : true;
+    const blockActivationStatus = 'disabled' === blocksStatuses[slug] ? false : true;
 
     const updateBlockStatus = () => {
 
@@ -29,10 +29,10 @@ const BlockCard = (props) => {
             status = slug;
         }
 
-        let optionsClone = { ...blocksStatuses };
+        const optionsClone = { ...blocksStatuses };
         optionsClone[ slug ] = status;
 
-        dispatch({type:'UPDATE_BLOCK_STATUSES', payload: optionsClone});
+        dispatch( {type:'UPDATE_BLOCK_STATUSES', payload: optionsClone} );
        
         const formData = new window.FormData();
 

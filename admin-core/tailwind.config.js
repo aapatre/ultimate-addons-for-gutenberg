@@ -4,12 +4,12 @@ module.exports = {
   ],
   plugins: [
     // ...
-    require('@tailwindcss/forms'),
+    require( '@tailwindcss/forms' ),
   ],
   theme: {
     extend: {
       colors: {
-        'wpcolor' : '#2271b1'
+        wpcolor : '#2271b1'
       }
     },
   },

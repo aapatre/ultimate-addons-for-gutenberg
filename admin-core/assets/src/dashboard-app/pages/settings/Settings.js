@@ -20,15 +20,15 @@ import PreloadLocalFonts from '@DashboardApp/pages/settings/PreloadLocalFonts';
 import CollapsePanels from '@DashboardApp/pages/settings/CollapsePanels';
 import CopyPasteStyles from '@DashboardApp/pages/settings/CopyPasteStyles';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const Settings = () => {
     
     const dispatch = useDispatch();
 
-    const activeSettingsNavigationTab = useSelector( (state) => state.activeSettingsNavigationTab );
+    const activeSettingsNavigationTab = useSelector( ( state ) => state.activeSettingsNavigationTab );
 
     const navigation = [
         { name: __( 'Asset Generation', 'ultimate-addons-for-gutenberg' ), slug: 'asset-generation', icon: UserCircleIcon },
@@ -43,8 +43,8 @@ const Settings = () => {
             <div className="lg:grid lg:grid-cols-12 lg:gap-x-5">
                 <aside className="py-6 px-2 sm:px-6 lg:py-0 lg:px-0 lg:col-span-3 border-r-2">
                     <nav className="space-y-1">
-                        {navigation.map((item) => (
-                        <a
+                        {navigation.map( ( item ) => (
+                        <a // eslint-disable-line
                             key={item.name}
                             className={classNames(
                             activeSettingsNavigationTab === item.slug
@@ -52,7 +52,7 @@ const Settings = () => {
                             : 'text-gray-900 hover:text-gray-900 hover:bg-gray-50',
                             'group cursor-pointer rounded-md px-3 py-2 flex items-center text-sm font-medium'
                             )}
-                            onClick={ () => dispatch({type:'UPDATE_SETTINGS_ACTIVE_NAVIGATION_TAB', payload: item.slug}) }
+                            onClick={ () => dispatch( {type:'UPDATE_SETTINGS_ACTIVE_NAVIGATION_TAB', payload: item.slug} ) }
                         >
                         <item.icon
                             className={classNames(
@@ -63,7 +63,7 @@ const Settings = () => {
                         />
                         <span className="truncate">{item.name}</span>
                         </a>
-                    ))}
+                    ) )}
                     </nav>
                 </aside>
                 <div className='space-y-6 sm:px-6 lg:px-0 lg:col-span-9'>

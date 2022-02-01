@@ -4,7 +4,7 @@ import apiFetch from '@wordpress/api-fetch';
 
 const RegenerateAssets = () => {
 
-    const [ regenerateAssetsState, setRegenerateAssetsState ] = useState(false);
+    const [ regenerateAssetsState, setRegenerateAssetsState ] = useState( false );
 
     const regenerateAssets = () => {
 

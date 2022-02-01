@@ -1,9 +1,9 @@
-import React, { useLayoutEffect } from 'react';
-import MainNav from "./MainNav";
+import React from 'react';
+import MainNav from './MainNav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SettingsRoute from "./SettingsRoute";
+import SettingsRoute from './SettingsRoute';
 
-const SettingsWrap = (props) => {
+const SettingsWrap = () => {
 
     return (
         <Router>

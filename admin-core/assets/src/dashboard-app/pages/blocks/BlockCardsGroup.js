@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 
 const BlockCardsGroup = () => {
 
-    const activeBlocksFilterTab = useSelector( (state) => state.activeBlocksFilterTab );
+    const activeBlocksFilterTab = useSelector( ( state ) => state.activeBlocksFilterTab );
 
     const blocksInfo = uag_react.blocks_info;
     
     const renderBlockCards = blocksInfo.map( ( block, index ) => {
 
-        let blockCategories = block['admin_categories'];
-        let showBlockCard = blockCategories.includes(activeBlocksFilterTab) || 'all' === activeBlocksFilterTab;
+        const blockCategories = block.admin_categories;
+        const showBlockCard = blockCategories.includes( activeBlocksFilterTab ) || 'all' === activeBlocksFilterTab;
 
         if ( ! showBlockCard ) {
             return '';
@@ -25,17 +25,5 @@ const BlockCardsGroup = () => {
         </div>
     );
 };
-
-const MapStateToProps = (state) => {
-    return {
-        blocksStatuses: state.blocksStatuses,
-        activeBlocksFilterTab: state.activeBlocksFilterTab,
-    };
-};
-const MapDispatchToProps = (dispatch) => {
-    return {
-        updateBlockStatuses: (blocksStatuses)=> dispatch({type:'UPDATE_BLOCK_STATUSES', payload: blocksStatuses}),
-    }
-}; 
 
 export default BlockCardsGroup;

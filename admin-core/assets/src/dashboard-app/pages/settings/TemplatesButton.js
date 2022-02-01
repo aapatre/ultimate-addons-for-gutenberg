@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const TemplatesButton = () => {
 
     const dispatch = useDispatch();
 
-    const enableTemplates = useSelector( (state) => state.enableTemplates );
+    const enableTemplates = useSelector( ( state ) => state.enableTemplates );
     const enableTemplatesStatus = 'no' === enableTemplates ? false : true;
 
     const updateEnableTemplatesStatus = () => {
@@ -23,7 +23,7 @@ const TemplatesButton = () => {
             assetStatus = 'no';
 		}
         
-        dispatch({type: 'UPDATE_TEMPLATES_BUTTON', payload: assetStatus });
+        dispatch( {type: 'UPDATE_TEMPLATES_BUTTON', payload: assetStatus } );
 
 		const action = 'uag_enable_templates_button',
 			nonce = uag_react.enable_templates_button_nonce;
@@ -38,7 +38,7 @@ const TemplatesButton = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 

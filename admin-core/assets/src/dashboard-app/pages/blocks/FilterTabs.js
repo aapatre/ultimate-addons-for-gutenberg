@@ -2,18 +2,18 @@ import React from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { useSelector, useDispatch } from 'react-redux';
 
-function classNames(...classes) {
-return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+return classes.filter( Boolean ).join( ' ' )
 }
 
-const FilterTabs = (props) => {
+const FilterTabs = () => {
 
     const dispatch = useDispatch();
 
-    const blocksStatuses = useSelector( (state) => state.blocksStatuses );
-    const activeBlocksFilterTab = useSelector( (state) => state.activeBlocksFilterTab );
+    const blocksStatuses = useSelector( ( state ) => state.blocksStatuses );
+    const activeBlocksFilterTab = useSelector( ( state ) => state.activeBlocksFilterTab );
 
-    let tabs = [
+    const tabs = [
         { name: 'All', slug: 'all' },
         { name: 'Creative', slug: 'creative' },
         { name: 'Content', slug: 'content' },
@@ -24,7 +24,7 @@ const FilterTabs = (props) => {
         { name: 'Extensions', slug: 'extensions' },
     ];
 
-    const activateAllBlocks = ( e ) => {
+    const activateAllBlocks = () => {
 		
 		const value = { ...blocksStatuses };
 
@@ -32,7 +32,7 @@ const FilterTabs = (props) => {
 			value[ block ] = 'block';
 		}
 
-        dispatch({type:'UPDATE_BLOCK_STATUSES', payload: value});
+        dispatch( {type:'UPDATE_BLOCK_STATUSES', payload: value} );
 
 		const formData = new window.FormData();
 
@@ -51,7 +51,7 @@ const FilterTabs = (props) => {
 		} );
 	};
 
-	const deactivateAllBlocks = ( e ) => {
+	const deactivateAllBlocks = () => {
 		
 		const value = { ...blocksStatuses };
 
@@ -59,7 +59,7 @@ const FilterTabs = (props) => {
 			value[ block ] = 'disabled';
 		}
 
-        dispatch({type:'UPDATE_BLOCK_STATUSES', payload: value});
+        dispatch( {type:'UPDATE_BLOCK_STATUSES', payload: value} );
 
 		const formData = new window.FormData();
 
@@ -90,25 +90,25 @@ const FilterTabs = (props) => {
                 name="tabs"
                 className="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
             >
-                {tabs.map((tab) => (
+                {tabs.map( ( tab ) => (
                 <option key={tab.name}>{tab.name}</option>
-                ))}
+                ) )}
             </select>
             </div>
             <div className="hidden justify-between sm:flex">
                 <nav className="flex space-x-4" aria-label="Tabs">
-                    {tabs.map((tab) => (
-                    <a
+                    {tabs.map( ( tab ) => (
+                    <a // eslint-disable-line
                         key={tab.name}
                         className={classNames(
                         tab.slug === activeBlocksFilterTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
                         'px-3 py-2 font-medium text-sm rounded-md cursor-pointer'
                         )}
-                        onClick={ () => dispatch({type:'UPDATE_BLOCKS_ACTIVE_FILTER_TAB', payload: tab.slug}) }
+                        onClick={ () => dispatch( {type:'UPDATE_BLOCKS_ACTIVE_FILTER_TAB', payload: tab.slug} ) }
                     >
                         {tab.name}
                     </a>
-                    ))}
+                    ) )}
                 </nav>
                 <span className="z-0 flex shadow-sm rounded-md justify-center">
                     <button

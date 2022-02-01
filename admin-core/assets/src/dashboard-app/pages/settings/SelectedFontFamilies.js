@@ -6,16 +6,16 @@ import apiFetch from '@wordpress/api-fetch';
 import Select from 'react-select';
 import googleFonts from '@Controls/fonts';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const SelectedFontFamilies = () => {
 
     const dispatch = useDispatch();
 
-    const enableSelectedFontFamilies = useSelector( (state) => state.enableSelectedFontFamilies );
-    const selectedFontFamilies = useSelector( (state) => state.selectedFontFamilies );
+    const enableSelectedFontFamilies = useSelector( ( state ) => state.enableSelectedFontFamilies );
+    const selectedFontFamilies = useSelector( ( state ) => state.selectedFontFamilies );
     const enableSelectedFontFamiliesStatus = 'disabled' === enableSelectedFontFamilies ? false : true;
 
     const fonts = [];
@@ -36,7 +36,7 @@ const SelectedFontFamilies = () => {
             assetStatus = 'disabled';
 		}
         
-        dispatch({type: 'UPDATE_ENABLE_SELECTED_FONT_FAMILIES', payload: assetStatus });
+        dispatch( {type: 'UPDATE_ENABLE_SELECTED_FONT_FAMILIES', payload: assetStatus } );
 
 		const formData = new window.FormData();
 
@@ -48,13 +48,13 @@ const SelectedFontFamilies = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 
     const updateSelectedFontFamilies = ( font ) => {
 		
-        dispatch({type: 'UPDATE_SELECTED_FONT_FAMILIES', payload: font });
+        dispatch( {type: 'UPDATE_SELECTED_FONT_FAMILIES', payload: font } );
 
 		const action = 'uag_select_font_globally',
 			nonce = uag_react.select_font_globally_nonce;

@@ -4,8 +4,8 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link, useLocation } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+  return classes.filter( Boolean ).join( ' ' )
 }
 
 export default function MainNav() {
@@ -35,7 +35,7 @@ export default function MainNav() {
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
-      {({ open }) => (
+      {( { open } ) => (
         <>
           <div className="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex justify-between h-16">
@@ -112,30 +112,27 @@ export default function MainNav() {
                   >
                     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        {( { active } ) => (
+                          <a // eslint-disable-line jsx-a11y/anchor-is-valid
+                            className={classNames( active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700' )}
                           >
                             Your Profile
                           </a>
                         )}
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        {( { active } ) => (
+                          <a // eslint-disable-line jsx-a11y/anchor-is-valid
+                            className={classNames( active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700' )}
                           >
                             Settings
                           </a>
                         )}
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        {( { active } ) => (
+                          <a // eslint-disable-line jsx-a11y/anchor-is-valid
+                            className={classNames( active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700' )}
                           >
                             Sign out
                           </a>
@@ -152,29 +149,25 @@ export default function MainNav() {
             <div className="pt-2 pb-4 space-y-1">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
-                as="a"
-                href="#"
+                
                 className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Dashboard
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
+                
                 className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Team
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
+                
                 className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Projects
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
+                
                 className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Calendar

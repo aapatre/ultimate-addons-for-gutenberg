@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+function classNames( ...classes ) {
+    return classes.filter( Boolean ).join( ' ' )
 }
 
 const CollapsePanels = () => {
 
     const dispatch = useDispatch();
 
-    const enableCollapsePanels = useSelector( (state) => state.enableCollapsePanels );
+    const enableCollapsePanels = useSelector( ( state ) => state.enableCollapsePanels );
     const enableCollapsePanelsStatus = 'disabled' === enableCollapsePanels ? false : true;
 
     const updateEnableCollapsePanelsStatus = () => {
@@ -23,7 +23,7 @@ const CollapsePanels = () => {
             assetStatus = 'disabled';
 		}
         
-        dispatch({type: 'UPDATE_ENABLE_COLLAPSE_PANELS', payload: assetStatus });
+        dispatch( {type: 'UPDATE_ENABLE_COLLAPSE_PANELS', payload: assetStatus } );
 
 		const formData = new window.FormData();
 
@@ -35,7 +35,7 @@ const CollapsePanels = () => {
 			url: uag_react.ajax_url,
 			method: 'POST',
 			body: formData,
-		} ).then( ( data ) => {
+		} ).then( () => {
 		} );
     };
 

@@ -11,7 +11,7 @@ module.exports = {
         wpcolor : '#2271b1'
       },
       fontFamily: {
-        'inter': ['"Inter"', 'sans-serif']
+        inter: ['"Inter"', 'sans-serif']
       }
     },
   },

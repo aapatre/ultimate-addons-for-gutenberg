@@ -18,9 +18,9 @@ const RollBack = () => {
         <>
             <section className='flex border-b border-solid border-slate-200'>
                 <div className='pr-16 pb-8 w-4/5'>
-                    <h2 className="text-lg leading-6 font-medium text-gray-900">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900">
                         {__( 'Rollback to Previous Version', 'ultimate-addons-for-gutenberg' )}
-                    </h2>
+                    </h3>
                     <p className="mt-1 text-sm text-gray-500">
                         { 
                             // eslint-disable-next-line @wordpress/i18n-no-variables

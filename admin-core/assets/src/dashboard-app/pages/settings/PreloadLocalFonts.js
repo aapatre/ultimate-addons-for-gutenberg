@@ -47,9 +47,9 @@ const PreloadLocalFonts = () => {
     return (
         <section className={`flex uag-font-select-${enableLoadFontsLocally}`}>
             <div className='pr-16 pb-8 w-4/5'>
-                <h2 className="text-lg leading-6 font-medium text-gray-900">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Preload Local Fonts', 'ultimate-addons-for-gutenberg' )}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-gray-500">
                     { __( 'Enable "Preload Local Fonts" to preload font files. It will load the font files right away on page load.', 'ultimate-addons-for-gutenberg' ) }
                 </p>

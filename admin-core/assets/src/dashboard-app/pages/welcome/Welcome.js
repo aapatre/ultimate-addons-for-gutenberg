@@ -31,7 +31,7 @@ const Welcome = () => {
                 <div className="rounded-lg bg-white overflow-hidden shadow">
                   <div className="p-6">
                         <h2 className='text-2xl pb-3 font-medium'>{__( 'Powerful Blocks & Beautiful Templates for any kind of website.', 'ultimate-addons-for-gutenberg' )}</h2>
-                        <iframe width="100%" height="380px" src="https://www.youtube.com/embed/N-MLUplUoZc?showinfo=0&controls=0&autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameBorder="0" allowFullScreen></iframe>
+                        <iframe width="100%" height="380px" src="https://www.youtube.com/embed/N-MLUplUoZc?showinfo=0&autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameBorder="0" allowFullScreen></iframe>
                         <span className="relative z-0 inline-flex shadow-sm rounded-md py-6 justify-center w-full">
                           <button
                               type="button"

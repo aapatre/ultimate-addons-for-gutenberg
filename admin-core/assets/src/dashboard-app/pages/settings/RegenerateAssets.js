@@ -33,14 +33,14 @@ const RegenerateAssets = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Asset Regeneration', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Facing issues with style, layout, color or another page element? Use this option to regenerate CSS and Javascript assets. It can help with all kinds of asset issues.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
             </div>
             <div>
                 <button
                     type="button"
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wpcolor hover:bg-wphovercolor focus:outline-none"
                     onClick={regenerateAssets}
                 >
                     {__( 'Regenerate Assets', 'ultimate-addons-for-gutenberg' )}

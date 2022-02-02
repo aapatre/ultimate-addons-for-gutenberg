@@ -50,7 +50,7 @@ const PreloadLocalFonts = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Preload Local Fonts', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Enable "Preload Local Fonts" to preload font files. It will load the font files right away on page load.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
             </div>
@@ -59,8 +59,8 @@ const PreloadLocalFonts = () => {
                     checked={enablePreloadLocalFontsStatus}
                     onChange={updatePreloadLocalFontsStatus}
                     className={classNames(
-                        enablePreloadLocalFontsStatus ? 'bg-indigo-600' : 'bg-gray-200',
-                        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                        enablePreloadLocalFontsStatus ? 'bg-wpcolor' : 'bg-gray-200',
+                        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
                     )}
                     >
                     <span

@@ -39,7 +39,7 @@ const Settings = () => {
       ];
 
     return (
-        <main className="max-w-[77rem] mx-auto my-6 pb-10 lg:py-6 lg:px-8 bg-white rounded-lg shadow overflow-hidden h-[32rem]">
+        <main className="max-w-[77rem] mx-auto my-[2.43rem] pb-10 lg:py-6 lg:px-8 bg-white rounded-lg shadow overflow-hidden h-[32rem]">
             <div className="lg:grid lg:grid-cols-12 lg:gap-x-5">
                 <aside className="py-6 px-2 sm:px-6 lg:py-0 lg:px-0 lg:col-span-3 border-r-2">
                     <nav className="space-y-1">
@@ -48,7 +48,7 @@ const Settings = () => {
                             key={item.name}
                             className={classNames(
                             activeSettingsNavigationTab === item.slug
-                            ? 'bg-gray-50 text-blue-600 hover:bg-white'
+                            ? 'bg-gray-50 text-wpcolor hover:bg-white'
                             : 'text-gray-900 hover:text-gray-900 hover:bg-gray-50',
                             'group cursor-pointer rounded-md px-3 py-2 flex items-center text-sm font-medium'
                             )}
@@ -56,7 +56,7 @@ const Settings = () => {
                         >
                         <item.icon
                             className={classNames(
-                            activeSettingsNavigationTab === item.slug ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-500',
+                            activeSettingsNavigationTab === item.slug ? 'text-wpcolor' : 'text-gray-400 group-hover:',
                             'flex-shrink-0 -ml-1 mr-3 h-6 w-6'
                             )}
                             aria-hidden="true"

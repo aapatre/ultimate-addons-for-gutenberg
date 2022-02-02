@@ -115,7 +115,7 @@ const FilterTabs = () => {
 	};
 
     return (
-        <div className="max-w-3xl mx-auto px-6 lg:max-w-[77rem] py-6 bg-white m-6 rounded-md">
+        <div className="max-w-3xl mx-auto p-[1.3rem] lg:max-w-[77rem] bg-white mt-[2.43rem] mb-[2.43rem] rounded-md">
             <div className="sm:hidden">
             <label htmlFor="tabs" className="sr-only">
                 Select a tab
@@ -137,7 +137,7 @@ const FilterTabs = () => {
                     <a // eslint-disable-line
                         key={tab.name}
                         className={classNames(
-                        tab.slug === activeBlocksFilterTab ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:text-gray-700',
+                        tab.slug === activeBlocksFilterTab ? 'bg-wphoverbgcolor text-wpcolor' : ' hover:text-wphovercolor',
                         'px-3 py-2 font-medium text-sm rounded-md cursor-pointer'
                         )}
                         onClick={ () => dispatch( {type:'UPDATE_BLOCKS_ACTIVE_FILTER_TAB', payload: tab.slug} ) }

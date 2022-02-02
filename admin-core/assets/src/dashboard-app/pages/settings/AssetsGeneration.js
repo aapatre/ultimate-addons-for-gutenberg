@@ -48,9 +48,9 @@ const AssetsGeneration = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'File Generation', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Ultimate Addons for Gutenberg loads the CSS and JS inline on the page by default. If you want to generate separate CSS and JS files for UAG blocks, enable this option. Please read ', 'ultimate-addons-for-gutenberg' ) }
-                    <a className='text-blue-600' href="https://www.ultimategutenberg.com/clean-html-with-uag/?utm_source=uag-dashboard&utm_medium=link&utm_campaign=uag-dashboard"> { __( 'this article', 'ultimate-addons-for-gutenberg' ) } </a>
+                    <a className='text-wpcolor hover:text-wphovercolor' href="https://www.ultimategutenberg.com/clean-html-with-uag/?utm_source=uag-dashboard&utm_medium=link&utm_campaign=uag-dashboard"> { __( 'this article', 'ultimate-addons-for-gutenberg' ) } </a>
                     {__( ' to learn the difference between generating CSS and JS inline and in a separate file.', 'ultimate-addons-for-gutenberg' )}
                 </p>
             </div>
@@ -59,8 +59,8 @@ const AssetsGeneration = () => {
                     checked={fileGenerationStatus}
                     onChange={updateFileGenerationStatus}
                     className={classNames(
-                        fileGenerationStatus ? 'bg-indigo-600' : 'bg-gray-200',
-                        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                        fileGenerationStatus ? 'bg-wpcolor' : 'bg-gray-200',
+                        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
                     )}
                     >
                     <span

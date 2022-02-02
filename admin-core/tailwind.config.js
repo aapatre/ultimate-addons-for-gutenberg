@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        wpcolor : '#2271b1'
+        wpcolor : '#2271b1',
+        wphovercolor : '#135e96',
+        wphoverbgcolor : '#2271b138'
       },
       fontFamily: {
         inter: ['"Inter"', 'sans-serif']

@@ -45,7 +45,7 @@ const BetaUpdates = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Enable Beta', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Enable this option to turn on beta updates and be notified when a new beta version of Ultimate Addons for Gutenberg is available. The beta version will not install automatically, you will have to install it when you get a notification. It is recommended to try beta on a test environment only.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
             </div>
@@ -54,7 +54,7 @@ const BetaUpdates = () => {
                     checked={enableBetaStatus}
                     onChange={updateEnableBetaStatus}
                     className={classNames(
-                        enableBetaStatus ? 'bg-indigo-600' : 'bg-gray-200',
+                        enableBetaStatus ? 'bg-wpcolor' : 'bg-gray-200',
                         'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                     )}
                     >

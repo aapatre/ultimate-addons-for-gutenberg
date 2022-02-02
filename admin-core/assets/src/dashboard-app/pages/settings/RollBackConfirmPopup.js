@@ -77,7 +77,7 @@ const RollBackConfirmPopup = ( props ) => {
                       { __( 'Rollback to Previous Version', 'ultimate-addons-for-gutenberg' ) }
                       </Dialog.Title>
                       <div className="mt-2">
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm ">
                         { 
                           // eslint-disable-next-line @wordpress/i18n-no-variables
                           __( `Are you sure you want to rollback to UAG v${previousVersionSelect}?`, 'ultimate-addons-for-gutenberg' ) 

@@ -30,9 +30,9 @@ const RegenerateAssets = () => {
     return (
         <section className='flex'>
             <div className='pr-16 pb-8 w-4/5'>
-                <h2 className="text-lg leading-6 font-medium text-gray-900">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Asset Regeneration', 'ultimate-addons-for-gutenberg' )}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-gray-500">
                     { __( 'Facing issues with style, layout, color or another page element? Use this option to regenerate CSS and Javascript assets. It can help with all kinds of asset issues.', 'ultimate-addons-for-gutenberg' ) }
                 </p>

@@ -36,7 +36,7 @@ export default function MainNav() {
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
-          <div className="max-w-[94%] mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="relative flex justify-between h-16">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
@@ -71,7 +71,7 @@ export default function MainNav() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                     type="button"
-                    className="relative inline-flex items-center px-4 py-2 rounded-md border border-gray-300 bg-wpcolor text-[#fff] text-sm font-medium focus:z-10 focus:outline-non"
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wpcolor hover:bg-wpcolor focus:outline-none"
                     onClick={ onVisitWebsiteClick }
                 >
                     {__( 'Visit Website', 'ultimate-addons-for-gutenberg' )}

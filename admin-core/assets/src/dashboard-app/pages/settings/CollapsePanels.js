@@ -42,9 +42,9 @@ const CollapsePanels = () => {
     return (
         <section className='flex border-b border-solid border-slate-200'>
             <div className='pr-16 pb-8 w-4/5'>
-                <h2 className="text-lg leading-6 font-medium text-gray-900">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Collapse Panels', 'ultimate-addons-for-gutenberg' )}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-gray-500">
                     { __( 'Enable the "Collapse Panels" option if you want to Collapse all other Panels in your Blocks Settings except for the one which is clicked This way you have only one Panel of Settings in front of you to Focus on.', 'ultimate-addons-for-gutenberg' ) }
                 </p>

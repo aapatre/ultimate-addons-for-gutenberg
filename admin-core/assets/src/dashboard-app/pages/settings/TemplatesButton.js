@@ -45,9 +45,9 @@ const TemplatesButton = () => {
     return (
         <section className='flex'>
             <div className='pr-16 pb-8 w-4/5'>
-                <h2 className="text-lg leading-6 font-medium text-gray-900">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Enable Templates Button', 'ultimate-addons-for-gutenberg' )}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-gray-500">
                     { __( 'Ultimate Addons for Gutenberg comes with a stunning library of page templates and block patterns. This library is accessible with the Templates button while editing the page or post. Manage the visibility of that button with this option.', 'ultimate-addons-for-gutenberg' ) }
                 </p>

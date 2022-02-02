@@ -76,9 +76,9 @@ const SelectedFontFamilies = () => {
     return (
         <section className='flex border-b border-solid border-slate-200'>
             <div className='pr-16 pb-8 w-4/5'>
-                <h2 className="text-lg leading-6 font-medium text-gray-900">
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Display Selected Font Families', 'ultimate-addons-for-gutenberg' )}
-                </h2>
+                </h3>
                 <p className="mt-1 text-sm text-gray-500">
                     { __( 'Now you can set multiple global font families for all UAG blocks by Enabling "Display Selected Font Families" option. Also, It will not list the unsed fonts in your blocks controls.', 'ultimate-addons-for-gutenberg' ) }
                 </p>

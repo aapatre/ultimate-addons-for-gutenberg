@@ -1,5 +1,9 @@
 const globalDataReducer = ( state = {}, action ) => {
     switch ( action.type ) {
+        case 'UPDATE_INITIAL_STATE':
+            return {
+                ...action.payload,
+            };
         case 'UPDATE_INITIAL_STATE_FLAG':
             return {
                 ...state,
@@ -64,10 +68,6 @@ const globalDataReducer = ( state = {}, action ) => {
             return {
                 ...state,
                 enableCopyPasteStyles: action.payload,
-            };
-        case 'UPDATE_INITIAL_STATE':
-            return {
-                ...action.payload,
             };
         default:
             return state;

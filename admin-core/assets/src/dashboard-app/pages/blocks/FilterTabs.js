@@ -1,6 +1,6 @@
-import React from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 
 function classNames( ...classes ) {
 return classes.filter( Boolean ).join( ' ' )
@@ -8,10 +8,12 @@ return classes.filter( Boolean ).join( ' ' )
 
 const FilterTabs = () => {
 
+    const blocksInfo = uag_react.blocks_info;
     const dispatch = useDispatch();
 
     const blocksStatuses = useSelector( ( state ) => state.blocksStatuses );
     const activeBlocksFilterTab = useSelector( ( state ) => state.activeBlocksFilterTab );
+    const [ categoriesBlocks, setcategoriesBlocks ] = useState([]);
 
     const tabs = [
         { name: 'All', slug: 'all' },
@@ -24,11 +26,40 @@ const FilterTabs = () => {
         { name: 'Extensions', slug: 'extensions' },
     ];
 
+    useEffect( () => {
+
+        let categoriesBlocksTemp = {
+            ...categoriesBlocks
+        };
+
+		blocksInfo.map( ( block ) => {
+
+            const blockCategories = block.admin_categories;
+            
+            blockCategories.map((category) => {
+    
+                if ( ! categoriesBlocksTemp [ category ] ) {
+                    categoriesBlocksTemp [ category ] = [];
+                }
+        
+                categoriesBlocksTemp [ category ].push(block.slug);
+            });
+    
+            return block;
+        });
+
+        setcategoriesBlocks(categoriesBlocksTemp)
+
+	}, [] );
+
     const activateAllBlocks = () => {
 		
 		const value = { ...blocksStatuses };
 
 		for ( const block in blocksStatuses ) {
+            if ( 'all' !== activeBlocksFilterTab && ( ! categoriesBlocks[activeBlocksFilterTab] || ! categoriesBlocks[activeBlocksFilterTab].includes(block) ) ) {
+                continue;
+            }
 			value[ block ] = 'block';
 		}
 
@@ -56,6 +87,9 @@ const FilterTabs = () => {
 		const value = { ...blocksStatuses };
 
 		for ( const block in blocksStatuses ) {
+            if ( 'all' !== activeBlocksFilterTab && ( ! categoriesBlocks[activeBlocksFilterTab] || ! categoriesBlocks[activeBlocksFilterTab].includes(block) ) ) {
+                continue;
+            }
 			value[ block ] = 'disabled';
 		}
 

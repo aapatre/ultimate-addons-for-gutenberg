@@ -18,7 +18,7 @@ const Welcome = () => {
 
   return(
       <main className="py-[1.43rem]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="max-w-3xl mx-auto px-6 lg:max-w-7xl">
           <h1 className="sr-only">Page title</h1>
           {/* Main 3 column grid */}
           <div className="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-[1.43rem]">

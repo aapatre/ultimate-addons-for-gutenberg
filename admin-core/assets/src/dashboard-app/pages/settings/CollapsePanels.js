@@ -45,7 +45,7 @@ const CollapsePanels = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Collapse Panels', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Enable the "Collapse Panels" option if you want to Collapse all other Panels in your Blocks Settings except for the one which is clicked This way you have only one Panel of Settings in front of you to Focus on.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
             </div>

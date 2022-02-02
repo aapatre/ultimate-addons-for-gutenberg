@@ -48,7 +48,7 @@ const LoadFontsLocally = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Load Google Fonts Locally', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Enable the "Load Google Fonts Locally" option to serve Google fonts from your server (locally). It will simply download the selected Google fonts and host those Google fonts locally on your WordPress site.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
             </div>
@@ -57,8 +57,8 @@ const LoadFontsLocally = () => {
                     checked={enableLoadFontsLocallyStatus}
                     onChange={updateLoadFontsLocallyStatus}
                     className={classNames(
-                        enableLoadFontsLocallyStatus ? 'bg-indigo-600' : 'bg-gray-200',
-                        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                        enableLoadFontsLocallyStatus ? 'bg-wpcolor' : 'bg-gray-200',
+                        'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
                     )}
                     >
                     <span

@@ -17,25 +17,25 @@ const Welcome = () => {
 	};
 
   return(
-      <main className="py-[1.43rem]">
+      <main className="py-[2.43rem]">
         <div className="max-w-3xl mx-auto px-6 lg:max-w-7xl">
           <h1 className="sr-only">Page title</h1>
           {/* Main 3 column grid */}
           <div className="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-[1.43rem]">
             {/* Left column */}
-            <div className="grid grid-cols-1 gap-4 lg:col-span-2">
+            <div className="grid grid-cols-1 gap-4 lg:col-span-2 h-full">
               <section aria-labelledby="section-1-title">
                 <h2 className="sr-only" id="section-1-title">
                   Section title
                 </h2>
-                <div className="rounded-lg bg-white overflow-hidden shadow">
+                <div className="rounded-lg bg-white overflow-hidden shadow h-full">
                   <div className="p-6">
                         <h3 className='text-xl pb-3 font-medium'>{__( 'Powerful Blocks & Beautiful Templates for any kind of website.', 'ultimate-addons-for-gutenberg' )}</h3>
                         <iframe width="100%" height="380px" src="https://www.youtube.com/embed/N-MLUplUoZc?showinfo=0&autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameBorder="0" allowFullScreen></iframe>
-                        <span className="relative z-0 inline-flex rounded-md py-6 justify-center w-full">
+                        <span className="relative z-0 inline-flex rounded-md pt-6 justify-center w-full">
                           <button
                               type="button"
-                              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wpcolor hover:bg-wpcolor focus:outline-none mr-4"
+                              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wpcolor hover:bg-wphovercolor focus:outline-none mr-4"
                               onClick={ onCreateNewPageClick }
                           >
                               {__( 'Create New Page', 'ultimate-addons-for-gutenberg' )}
@@ -75,7 +75,7 @@ const Welcome = () => {
                         'ultimate-addons-for-gutenberg'
                       ) }
                     </p>
-                    <a className='text-base text-blue-600 underline' href='https://ultimategutenberg.com/docs/' target='_blank' rel="noreferrer">
+                    <a className='text-base text-wpcolor hover:text-wphovercolor underline' href='https://ultimategutenberg.com/docs/' target='_blank' rel="noreferrer">
                       { __(
                         'Browse Now',
                         'ultimate-addons-for-gutenberg'
@@ -102,7 +102,7 @@ const Welcome = () => {
                         'ultimate-addons-for-gutenberg'
                       ) }
                     </p>
-                    <a className='text-base text-blue-600 underline' href='https://ultimategutenberg.com/support/' target='_blank' rel="noreferrer">
+                    <a className='text-base text-wpcolor hover:text-wphovercolor underline' href='https://ultimategutenberg.com/support/' target='_blank' rel="noreferrer">
                       { __(
                         'Get Support',
                         'ultimate-addons-for-gutenberg'
@@ -129,7 +129,7 @@ const Welcome = () => {
                         'ultimate-addons-for-gutenberg'
                       ) }
                     </p>
-                    <a className='text-base text-blue-600 underline' href='https://www.facebook.com/groups/wpastra/' target='_blank' rel="noreferrer">
+                    <a className='text-base text-wpcolor hover:text-wphovercolor underline' href='https://www.facebook.com/groups/wpastra/' target='_blank' rel="noreferrer">
                       { __(
                         'Join Now',
                         'ultimate-addons-for-gutenberg'

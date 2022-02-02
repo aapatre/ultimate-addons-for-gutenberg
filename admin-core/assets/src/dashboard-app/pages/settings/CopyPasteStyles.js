@@ -45,7 +45,7 @@ const CopyPasteStyles = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Copy Paste Styles', 'ultimate-addons-for-gutenberg' )}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-[0.6rem] text-sm ">
                     { __( 'Enable the "Copy Paste Styles" option to have the ability to Copy & Paste UAG & Core Gutenberg Blocks Styles.', 'ultimate-addons-for-gutenberg' ) }
                 </p>
             </div>

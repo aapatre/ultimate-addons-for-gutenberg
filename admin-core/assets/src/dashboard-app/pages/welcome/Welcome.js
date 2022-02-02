@@ -17,11 +17,11 @@ const Welcome = () => {
 	};
 
   return(
-      <main className="py-6">
+      <main className="py-[1.43rem]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="sr-only">Page title</h1>
           {/* Main 3 column grid */}
-          <div className="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
+          <div className="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-[1.43rem]">
             {/* Left column */}
             <div className="grid grid-cols-1 gap-4 lg:col-span-2">
               <section aria-labelledby="section-1-title">
@@ -30,12 +30,12 @@ const Welcome = () => {
                 </h2>
                 <div className="rounded-lg bg-white overflow-hidden shadow">
                   <div className="p-6">
-                        <h2 className='text-2xl pb-3 font-medium'>{__( 'Powerful Blocks & Beautiful Templates for any kind of website.', 'ultimate-addons-for-gutenberg' )}</h2>
+                        <h3 className='text-xl pb-3 font-medium'>{__( 'Powerful Blocks & Beautiful Templates for any kind of website.', 'ultimate-addons-for-gutenberg' )}</h3>
                         <iframe width="100%" height="380px" src="https://www.youtube.com/embed/N-MLUplUoZc?showinfo=0&autoplay=1&mute=1" allow="autoplay" title="YouTube video player" frameBorder="0" allowFullScreen></iframe>
-                        <span className="relative z-0 inline-flex shadow-sm rounded-md py-6 justify-center w-full">
+                        <span className="relative z-0 inline-flex rounded-md py-6 justify-center w-full">
                           <button
                               type="button"
-                              className="relative inline-flex items-center mr-4 px-4 py-2 rounded-md border border-gray-300 bg-wpcolor text-[#fff] text-sm font-medium focus:z-10 focus:outline-none "
+                              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wpcolor hover:bg-wpcolor focus:outline-none mr-4"
                               onClick={ onCreateNewPageClick }
                           >
                               {__( 'Create New Page', 'ultimate-addons-for-gutenberg' )}
@@ -43,7 +43,7 @@ const Welcome = () => {
                           </button>
                           <button
                               type="button"
-                              className="-ml-px relative inline-flex rounded-md items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 focus:z-10 focus:outline-none "
+                              className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none"
                               onClick={ onReadFullGuideClick }
                           >
                               {__( 'Read Full Guide', 'ultimate-addons-for-gutenberg' )}
@@ -56,7 +56,7 @@ const Welcome = () => {
             </div>
 
             {/* Right column */}
-            <div className="grid grid-cols-1 gap-[2.2rem]">
+            <div className="grid grid-cols-1 gap-[1.43rem]">
               <section aria-labelledby="section-2-title">
                 <h2 className="sr-only" id="section-2-title">
                   Section title

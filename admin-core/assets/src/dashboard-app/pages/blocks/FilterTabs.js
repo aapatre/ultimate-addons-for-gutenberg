@@ -13,7 +13,7 @@ const FilterTabs = () => {
 
     const blocksStatuses = useSelector( ( state ) => state.blocksStatuses );
     const activeBlocksFilterTab = useSelector( ( state ) => state.activeBlocksFilterTab );
-    const [ categoriesBlocks, setcategoriesBlocks ] = useState([]);
+    const [ categoriesBlocks, setcategoriesBlocks ] = useState( [] );
 
     const tabs = [
         { name: 'All', slug: 'all' },
@@ -28,7 +28,7 @@ const FilterTabs = () => {
 
     useEffect( () => {
 
-        let categoriesBlocksTemp = {
+        const categoriesBlocksTemp = {
             ...categoriesBlocks
         };
 
@@ -36,19 +36,21 @@ const FilterTabs = () => {
 
             const blockCategories = block.admin_categories;
             
-            blockCategories.map((category) => {
+            blockCategories.map( ( category ) => {
     
                 if ( ! categoriesBlocksTemp [ category ] ) {
                     categoriesBlocksTemp [ category ] = [];
                 }
         
-                categoriesBlocksTemp [ category ].push(block.slug);
-            });
+                categoriesBlocksTemp [ category ].push( block.slug );
+
+                return category;
+            } );
     
             return block;
-        });
+        } );
 
-        setcategoriesBlocks(categoriesBlocksTemp)
+        setcategoriesBlocks( categoriesBlocksTemp )
 
 	}, [] );
 
@@ -57,7 +59,7 @@ const FilterTabs = () => {
 		const value = { ...blocksStatuses };
 
 		for ( const block in blocksStatuses ) {
-            if ( 'all' !== activeBlocksFilterTab && ( ! categoriesBlocks[activeBlocksFilterTab] || ! categoriesBlocks[activeBlocksFilterTab].includes(block) ) ) {
+            if ( 'all' !== activeBlocksFilterTab && ( ! categoriesBlocks[activeBlocksFilterTab] || ! categoriesBlocks[activeBlocksFilterTab].includes( block ) ) ) {
                 continue;
             }
 			value[ block ] = 'block';
@@ -87,7 +89,7 @@ const FilterTabs = () => {
 		const value = { ...blocksStatuses };
 
 		for ( const block in blocksStatuses ) {
-            if ( 'all' !== activeBlocksFilterTab && ( ! categoriesBlocks[activeBlocksFilterTab] || ! categoriesBlocks[activeBlocksFilterTab].includes(block) ) ) {
+            if ( 'all' !== activeBlocksFilterTab && ( ! categoriesBlocks[activeBlocksFilterTab] || ! categoriesBlocks[activeBlocksFilterTab].includes( block ) ) ) {
                 continue;
             }
 			value[ block ] = 'disabled';

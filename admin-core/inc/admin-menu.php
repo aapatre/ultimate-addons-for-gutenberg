@@ -196,7 +196,7 @@ class Admin_Menu {
 				'rollback_url'   => esc_url( add_query_arg( 'version', 'VERSION', wp_nonce_url( admin_url( 'admin-post.php?action=uag_rollback' ), 'uag_rollback' ) ) ),
 				'blocks_info'    => $blocks_info,
 				'reusable_url'   => esc_url( admin_url( 'edit.php?post_type=wp_block' ) ),
-				'global_data' => Admin_Helper::get_options()
+				'global_data'    => Admin_Helper::get_options(),
 			)
 		);
 
@@ -358,7 +358,7 @@ class Admin_Menu {
 		wp_enqueue_script( $handle );
 
 		wp_set_script_translations( $handle, 'ultimate-addons-for-gutenberg' );
-		wp_enqueue_style( 'uag-admin-google-fonts');
+		wp_enqueue_style( 'uag-admin-google-fonts' );
 		wp_enqueue_style( $handle );
 		wp_style_add_data( $handle, 'rtl', 'replace' );
 		wp_localize_script( $handle, 'uag_admin_react', $localize );

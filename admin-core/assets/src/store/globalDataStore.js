@@ -15,6 +15,8 @@ const initialState = {
     enablePreloadLocalFonts : '',
     enableCollapsePanels : '',
     enableCopyPasteStyles : '',
+    enableDisplayConditions : '',
+    enableMasonryExtension : ''
 };
 
 const globalDataStore = createStore(

@@ -1,4 +1,5 @@
 import BlockCard from '@DashboardApp/pages/blocks/BlockCard';
+import Extensions from '@DashboardApp/pages/blocks/Extensions';
 import { useSelector } from 'react-redux';
 
 const BlockCardsGroup = () => {
@@ -22,6 +23,9 @@ const BlockCardsGroup = () => {
     return (
         <div className="lg:max-w-[80rem] mx-auto grid grid-cols-2 gap-4 sm:grid-cols-3 p-6 pt-0">
             { renderBlockCards }
+            { 
+                ( 'extensions' === activeBlocksFilterTab ) && <Extensions/> 
+            }
         </div>
     );
 };

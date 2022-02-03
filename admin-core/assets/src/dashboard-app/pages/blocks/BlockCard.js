@@ -2,6 +2,7 @@ import UAGB_Block_Icons from '@Common/block-icons';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
 import { useSelector, useDispatch } from 'react-redux';
+import { __ } from '@wordpress/i18n';
 
 function classNames( ...classes ) {
     return classes.filter( Boolean ).join( ' ' )
@@ -64,7 +65,7 @@ const BlockCard = ( props ) => {
             </div>
             <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-gray-900 mb-0">{title}</p>
-                <a className="text-sm  truncate" href={ `https://ultimategutenberg.com/blocks/${ link }` } target="_blank"rel="noreferrer">Live Demo</a>
+                <a className="text-sm  text-wpcolor hover:text-wphovercolor truncate" href={ `https://ultimategutenberg.com/blocks/${ link }` } target="_blank"rel="noreferrer">{__( 'Live Demo', 'ultimate-addons-for-gutenberg' )}</a>
             </div>
             <Switch
                 checked={blockActivationStatus}
@@ -74,7 +75,6 @@ const BlockCard = ( props ) => {
                     'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none'
                 )}
                 >
-                <span className="sr-only">Use setting</span>
                 <span
                     aria-hidden="true"
                     className={classNames(

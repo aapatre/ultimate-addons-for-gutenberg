@@ -4,7 +4,7 @@ const Welcome = () => {
 
   const onCreateNewPageClick = () => {
 		window.open(
-			'https://ultimategutenberg.com',
+			uag_react.wp_pages_url,
 			'_blank'
 		);
 	};

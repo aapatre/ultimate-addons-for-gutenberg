@@ -94,7 +94,7 @@ const SelectedFontFamilies = () => {
                     maxMenuHeight={ 140 }
                     minMenuHeight = { 70 }
                     isSearchable={true}
-                    className={`mt-2 uag-font-select-${enableSelectedFontFamilies}`}
+                    className={`mt-4 uag-font-select-${enableSelectedFontFamilies}`}
                 />
             </div>
             <div>

@@ -602,9 +602,6 @@ select {
 }.my-\[2\.43rem\] {
   margin-top: 2.43rem;
   margin-bottom: 2.43rem;
-}.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }.mb-0 {
   margin-bottom: 0px;
 }.mt-\[2\.43rem\] {
@@ -625,8 +622,12 @@ select {
   margin-top: 0.5rem;
 }.mt-5 {
   margin-top: 1.25rem;
+}.mt-4 {
+  margin-top: 1rem;
 }.ml-8 {
   margin-left: 2rem;
+}.mt-8 {
+  margin-top: 2rem;
 }.mr-8 {
   margin-right: 2rem;
 }.mr-4 {
@@ -659,8 +660,8 @@ select {
   height: 2.25rem;
 }.h-12 {
   height: 3rem;
-}.h-\[32rem\] {
-  height: 32rem;
+}.h-\[33rem\] {
+  height: 33rem;
 }.h-full {
   height: 100%;
 }.min-h-screen {
@@ -776,8 +777,8 @@ select {
   border-bottom-width: 2px;
 }.border-b {
   border-bottom-width: 1px;
-}.border-r-2 {
-  border-right-width: 2px;
+}.border-r {
+  border-right-width: 1px;
 }.border-solid {
   border-style: solid;
 }.border-wpcolor {

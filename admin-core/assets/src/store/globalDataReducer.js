@@ -69,6 +69,16 @@ const globalDataReducer = ( state = {}, action ) => {
                 ...state,
                 enableCopyPasteStyles: action.payload,
             };
+        case 'UPDATE_ENABLE_DISPLAY_CONDITIONS':
+            return {
+                ...state,
+                enableDisplayConditions: action.payload,
+            };
+        case 'UPDATE_ENABLE_MASONRY_EXTENSION':
+            return {
+                ...state,
+                enableMasonryExtension: action.payload,
+            };
         default:
             return state;
     }

@@ -33,9 +33,9 @@ const Settings = () => {
       ];
 
     return (
-        <main className="max-w-[77rem] mx-auto my-[2.43rem] bg-white rounded-lg shadow overflow-hidden h-[32rem]">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-x-5 h-full">
-                <aside className="py-6 px-2 ml-8 sm:px-6 lg:py-6 lg:px-0 lg:col-span-3 border-r-2">
+        <main className="max-w-[77rem] mx-auto my-[2.43rem] bg-white rounded-lg shadow overflow-hidden h-[33rem]">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-x-5 pb-8 h-full">
+                <aside className="py-6 px-2 ml-8 sm:px-6 lg:py-6 lg:px-0 lg:col-span-3 border-r">
                     <nav className="space-y-1">
                         {navigation.map( ( item ) => (
                         <a // eslint-disable-line
@@ -54,7 +54,7 @@ const Settings = () => {
                     ) )}
                     </nav>
                 </aside>
-                <div className='space-y-6 my-8 mr-8 sm:px-6 lg:px-0 lg:col-span-9'>
+                <div className='space-y-6 mt-8 mb-0 mr-8 sm:px-6 lg:px-0 lg:col-span-9'>
                     { 'asset-generation' === activeSettingsNavigationTab && 
                         <>
                             <AssetsGeneration/>

@@ -1,10 +1,4 @@
-import {
-    BellIcon,
-    CreditCardIcon,
-    KeyIcon,
-    UserCircleIcon,
-    ViewGridAddIcon,
-} from '@heroicons/react/outline'
+import SettingsIcons from './SettingsIcons';
 
 import { __ } from '@wordpress/i18n';
 
@@ -31,11 +25,11 @@ const Settings = () => {
     const activeSettingsNavigationTab = useSelector( ( state ) => state.activeSettingsNavigationTab );
 
     const navigation = [
-        { name: __( 'Asset Generation', 'ultimate-addons-for-gutenberg' ), slug: 'asset-generation', icon: UserCircleIcon },
-        { name: __( 'Templates', 'ultimate-addons-for-gutenberg' ), slug: 'templates', icon: KeyIcon },
-        { name: __( 'Version Control', 'ultimate-addons-for-gutenberg' ), slug: 'version-control', icon: BellIcon },
-        { name: __( 'Performance', 'ultimate-addons-for-gutenberg' ), slug: 'fonts-performance', icon: CreditCardIcon },
-        { name: __( 'Global Settings', 'ultimate-addons-for-gutenberg' ), slug: 'global-settings', icon: ViewGridAddIcon },
+        { name: __( 'Asset Generation', 'ultimate-addons-for-gutenberg' ), slug: 'asset-generation', icon: SettingsIcons['asset-generation'] },
+        { name: __( 'Templates', 'ultimate-addons-for-gutenberg' ), slug: 'templates', icon: SettingsIcons.templates },
+        { name: __( 'Version Control', 'ultimate-addons-for-gutenberg' ), slug: 'version-control', icon: SettingsIcons['version-control'] },
+        { name: __( 'Performance', 'ultimate-addons-for-gutenberg' ), slug: 'fonts-performance', icon: SettingsIcons['fonts-performance'] },
+        { name: __( 'Global Settings', 'ultimate-addons-for-gutenberg' ), slug: 'global-settings', icon: SettingsIcons['global-settings'] },
       ];
 
     return (
@@ -48,20 +42,14 @@ const Settings = () => {
                             key={item.name}
                             className={classNames(
                             activeSettingsNavigationTab === item.slug
-                            ? 'bg-gray-50 text-wpcolor hover:bg-white'
-                            : 'text-gray-900 hover:text-gray-900 hover:bg-gray-50',
+                            ? 'bg-gray-50 text-wpcolor fill-wpcolor hover:bg-white'
+                            : 'text-gray-900 fill-gray-900 hover:text-gray-900 hover:bg-gray-50',
                             'group cursor-pointer rounded-md px-3 py-2 flex items-center text-sm font-medium'
                             )}
                             onClick={ () => dispatch( {type:'UPDATE_SETTINGS_ACTIVE_NAVIGATION_TAB', payload: item.slug} ) }
                         >
-                        <item.icon
-                            className={classNames(
-                            activeSettingsNavigationTab === item.slug ? 'text-wpcolor' : 'text-gray-400 group-hover:',
-                            'flex-shrink-0 -ml-1 mr-3 h-6 w-6'
-                            )}
-                            aria-hidden="true"
-                        />
-                        <span className="truncate">{item.name}</span>
+                            { item.icon }
+                            <span className="truncate">{item.name}</span>
                         </a>
                     ) )}
                     </nav>

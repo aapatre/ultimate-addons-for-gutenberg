@@ -64,8 +64,14 @@ const FilterTabs = () => {
             }
 			value[ block ] = 'block';
 		}
-
+        // Update Blocks Statuses.
         dispatch( {type:'UPDATE_BLOCK_STATUSES', payload: value} );
+
+        if ( 'extensions' === activeBlocksFilterTab || 'all' === activeBlocksFilterTab ) {
+            // Update Extensions Statuses.
+            dispatch( {type: 'UPDATE_ENABLE_MASONRY_EXTENSION', payload: 'enabled' } );
+            dispatch( {type: 'UPDATE_ENABLE_DISPLAY_CONDITIONS', payload: 'enabled' } );
+        }
 
 		const formData = new window.FormData();
 
@@ -95,7 +101,14 @@ const FilterTabs = () => {
 			value[ block ] = 'disabled';
 		}
 
+        // Update Blocks Statuses.
         dispatch( {type:'UPDATE_BLOCK_STATUSES', payload: value} );
+
+        if ( 'extensions' === activeBlocksFilterTab || 'all' === activeBlocksFilterTab ) {
+            // Update Extensions Statuses.
+            dispatch( {type: 'UPDATE_ENABLE_MASONRY_EXTENSION', payload: 'disabled' } );
+            dispatch( {type: 'UPDATE_ENABLE_DISPLAY_CONDITIONS', payload: 'disabled' } );
+        }
 
 		const formData = new window.FormData();
 

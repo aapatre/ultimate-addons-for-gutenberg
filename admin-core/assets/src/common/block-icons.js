@@ -1114,7 +1114,7 @@ const UAGB_Block_Icons = {
 	),
 	'masonry-gallery': el(
 		'svg',
-		{ width: 34, height: 34, viewBox: '0 0 36 34' },
+		{ width: 34, height: 34, viewBox: '0 0 36 36' },
 		el( 'path', {
 			fill: '#2271b1',
 			d:

@@ -2,6 +2,8 @@ import { __ } from '@wordpress/i18n';
 import { useSelector, useDispatch } from 'react-redux';
 import { Switch } from '@headlessui/react'
 import apiFetch from '@wordpress/api-fetch';
+import UAGB_Block_Icons from '@Common/block-icons';
+import { useEffect } from 'react';
 
 function classNames( ...classes ) {
     return classes.filter( Boolean ).join( ' ' )
@@ -14,6 +16,23 @@ const MasonryGalleryExtension = () => {
 
     const masonryGallerysStatus = 'disabled' === enableMasonryExtension ? false : true;
 
+    useEffect( () => {
+    
+        const formData = new window.FormData();
+
+		formData.append( 'action', 'uag_enable_masonry_gallery' );
+		formData.append( 'security', uag_react.enable_masonry_gallery_nonce );
+		formData.append( 'value', enableMasonryExtension );
+
+		apiFetch( {
+			url: uag_react.ajax_url,
+			method: 'POST',
+			body: formData,
+		} ).then( () => {
+		} );
+
+    }, [enableMasonryExtension] );
+
     const updateMasonryGallerysStatus = () => {
 
         let assetStatus;
@@ -22,29 +41,17 @@ const MasonryGalleryExtension = () => {
 		} else {
             assetStatus = 'disabled';
 		}
-        
+
         dispatch( {type: 'UPDATE_ENABLE_MASONRY_EXTENSION', payload: assetStatus } );
-
-		const formData = new window.FormData();
-
-		formData.append( 'action', 'uag_enable_masonry_gallery' );
-		formData.append( 'security', uag_react.enable_masonry_gallery_nonce );
-		formData.append( 'value', assetStatus );
-
-		apiFetch( {
-			url: uag_react.ajax_url,
-			method: 'POST',
-			body: formData,
-		} ).then( () => {
-		} );
     };
+
     return (
         <div
         key={'masonry-gallery'}
         className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3"
         >
             <div className="flex-shrink-0">
-                {/* { UAGB_Block_Icons['masonry-gallery'] } */}
+                { UAGB_Block_Icons['masonry-gallery'] }
             </div>
             <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-gray-900 mb-0">{__( 'Masonry Gallery', 'ultimate-addons-for-gutenberg' )}</p>

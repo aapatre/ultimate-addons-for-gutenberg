@@ -41,17 +41,24 @@ const ChangeLogPopup = () =>{
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       {staticUAGChangelogRSSFeed.map((item, index) => {
-                          
-                        return ( <a
-                          key={staticUAGChangelogRSSFeed[index]['title']}
-                          href={staticUAGChangelogRSSFeed[index]['link']}
-                          className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-                        >
-                          <p className="text-base font-medium text-gray-900">{staticUAGChangelogRSSFeed[index]['title']}</p>
-                          <p className="mt-1 text-sm text-gray-500">{staticUAGChangelogRSSFeed[index]['pubDate']}</p>
-                          <p className="mt-1 text-sm text-gray-500">{staticUAGChangelogRSSFeed[index]['description']['__cdata']}</p>
-                        </a>
-                        )
+                          let title = staticUAGChangelogRSSFeed[index]['title'];
+                          let description = staticUAGChangelogRSSFeed[index]['description']['__cdata'];
+                          let link = staticUAGChangelogRSSFeed[index]['link'];
+                          let pubDate = staticUAGChangelogRSSFeed[index]['pubDate'];
+                          let tempDateSplit = pubDate.split(' ');
+                          tempDateSplit.splice(4, 2)
+                          pubDate = tempDateSplit.join(' ');
+                        return ( 
+                            <a
+                            key={title}
+                            href={link}
+                            className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                            >
+                            <p className="text-base font-medium text-gray-900" dangerouslySetInnerHTML={{__html: title}}></p>
+                            <p className="mt-1 text-sm text-gray-500" dangerouslySetInnerHTML={{__html: pubDate}}></p>
+                            <p className="mt-1 text-sm text-gray-500" dangerouslySetInnerHTML={{__html: description}}></p>
+                            </a>
+                        );
                      })}
                     </div>
                   </div>

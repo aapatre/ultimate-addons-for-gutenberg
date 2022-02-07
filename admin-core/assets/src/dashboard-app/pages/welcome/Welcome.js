@@ -81,6 +81,7 @@ const Welcome = () => {
                         'ultimate-addons-for-gutenberg'
                       ) }
                     </a>
+                    <a className='text-base text-wpcolor hover:text-wphovercolor no-underline' href='https://ultimategutenberg.com/docs/' target='_blank' rel="noreferrer"> → </a>
                   </div>
                 </div>
               </section>
@@ -108,6 +109,7 @@ const Welcome = () => {
                         'ultimate-addons-for-gutenberg'
                       ) }
                     </a>
+                    <a className='text-base text-wpcolor hover:text-wphovercolor no-underline' href='https://ultimategutenberg.com/support/' target='_blank' rel="noreferrer"> → </a>
                   </div>
                 </div>
               </section>
@@ -135,6 +137,7 @@ const Welcome = () => {
                         'ultimate-addons-for-gutenberg'
                       ) }
                     </a>
+                    <a className='text-base text-wpcolor hover:text-wphovercolor no-underline' href='https://www.facebook.com/groups/wpastra/' target='_blank' rel="noreferrer"> → </a>
                   </div>
                 </div>
               </section>

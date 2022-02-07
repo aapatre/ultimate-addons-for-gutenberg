@@ -58,7 +58,7 @@ const BlockCard = ( props ) => {
     return (
         <div
         key={slug}
-        className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-4"
+        className="relative rounded-[0.2rem] border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-4"
         >
             <div className="flex-shrink-0">
                 { UAGB_Block_Icons[slug] }

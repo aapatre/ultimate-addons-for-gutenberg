@@ -48,7 +48,7 @@ const MasonryGalleryExtension = () => {
     return (
         <div
         key={'masonry-gallery'}
-        className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3"
+        className="relative rounded-[0.2rem] border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3"
         >
             <div className="flex-shrink-0">
                 { UAGB_Block_Icons['masonry-gallery'] }

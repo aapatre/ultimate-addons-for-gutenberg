@@ -1,7 +1,6 @@
 import { Disclosure } from '@headlessui/react'
 import { Link, useLocation } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
-import staticUAGChangelogRSSFeed from '@Utils/staticUAGChangelogRSSFeed';
 import ChangeLogPopup from './ChangeLogPopup';
 
 export default function MainNav() {
@@ -29,13 +28,6 @@ export default function MainNav() {
 		? query.get( 'page' )
 		: uag_react.home_slug;
 	const activePath = query.get( 'path' ) ? query.get( 'path' ) : '';
-
-  const onVisitWebsiteClick = () => {
-		window.open(
-			'https://ultimategutenberg.com',
-			'_blank'
-		);
-	};
 
   return (
     <Disclosure as="nav" className="bg-white shadow">

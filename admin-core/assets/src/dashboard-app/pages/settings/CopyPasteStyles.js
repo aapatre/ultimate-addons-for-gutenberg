@@ -41,7 +41,7 @@ const CopyPasteStyles = () => {
 
     return (
         <section className='flex'>
-            <div className='pr-16 pb-8 w-4/5'>
+            <div className='pr-16 pb-8 w-[78%]'>
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                     {__( 'Copy Paste Styles', 'ultimate-addons-for-gutenberg' )}
                 </h3>

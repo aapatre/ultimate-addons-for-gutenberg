@@ -25,7 +25,8 @@
 		"react-router-dom": "^5.2.0",
 		"react-select": "^3.1.0",
 		"redux": "^4.1.2",
-		"request": "^2.88.2"
+		"request": "^2.88.2",
+		"rss-to-json": "^2.0.2"
 	},
 	"devDependencies": {
 		"@types/sortablejs": "^1.10.6",

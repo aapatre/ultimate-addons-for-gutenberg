@@ -1,8 +1,10 @@
 import { Disclosure } from '@headlessui/react'
 import { Link, useLocation } from 'react-router-dom';
 import { __ } from '@wordpress/i18n';
+import ChangeLogPopup from './ChangeLogPopup';
 
 export default function MainNav() {
+
   const menus = [
     {
         name: __( 'Welcome', 'ultimate-addons-for-gutenberg' ),
@@ -26,13 +28,6 @@ export default function MainNav() {
 		? query.get( 'page' )
 		: uag_react.home_slug;
 	const activePath = query.get( 'path' ) ? query.get( 'path' ) : '';
-
-  const onVisitWebsiteClick = () => {
-		window.open(
-			'https://ultimategutenberg.com',
-			'_blank'
-		);
-	};
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
@@ -69,13 +64,7 @@ export default function MainNav() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                    type="button"
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-wpcolor hover:bg-wphovercolor focus:outline-none"
-                    onClick={ onVisitWebsiteClick }
-                >
-                    {__( 'Visit Website', 'ultimate-addons-for-gutenberg' )}
-                </button>
+                <ChangeLogPopup/>
               </div>
             </div>
           </div>

@@ -333,18 +333,22 @@ const attributes = {
 	},
 	ctaTopPadding: {
 		type: 'number',
+		default: 10,
 		isUAGStyle: true,
 	},
 	ctaBottomPadding: {
 		type: 'number',
+		default: 10,
 		isUAGStyle: true,
 	},
 	ctaLeftPadding: {
 		type: 'number',
+		default: 14,
 		isUAGStyle: true,
 	},
 	ctaRightPadding: {
 		type: 'number',
+		default: 14,
 		isUAGStyle: true,
 	},
 	ctaLeftPaddingTablet: {

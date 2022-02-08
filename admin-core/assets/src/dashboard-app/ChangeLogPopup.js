@@ -27,7 +27,7 @@ const ChangeLogPopup = () =>{
                   aria-hidden="true"
                 />
               </Popover.Button>
-    
+
               <Transition
                 as={Fragment}
                 enter="transition ease-out duration-200"
@@ -38,7 +38,7 @@ const ChangeLogPopup = () =>{
                 leaveTo="opacity-0 translate-y-1"
               >
                 <Popover.Panel className="absolute z-10 left-0 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
-                  <div className="rounded-[0.2rem] shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                  <div className="rounded-[0.2rem] shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-auto max-h-screen">
                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       {staticUAGChangelogRSSFeed.map( ( item, index ) => {
                           const title = staticUAGChangelogRSSFeed[index].title;
@@ -48,7 +48,7 @@ const ChangeLogPopup = () =>{
                           const tempDateSplit = pubDate.split( ' ' );
                           tempDateSplit.splice( 4, 2 )
                           pubDate = tempDateSplit.join( ' ' );
-                        return ( 
+                        return (
                             <a
                             key={title}
                             href={link}

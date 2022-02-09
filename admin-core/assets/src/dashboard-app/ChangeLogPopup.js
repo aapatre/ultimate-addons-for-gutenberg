@@ -45,7 +45,7 @@ const ChangeLogPopup = () =>{
                           const title = dynamicUAGChangelogRSSFeed[index].title;
                           const description = dynamicUAGChangelogRSSFeed[index].description;
                           const link = dynamicUAGChangelogRSSFeed[index].link;
-                          let pubDate = dynamicUAGChangelogRSSFeed[index].date;
+                          const pubDate = dynamicUAGChangelogRSSFeed[index].date;
 
                         return (
                             <a

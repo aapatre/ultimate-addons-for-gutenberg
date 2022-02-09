@@ -76,7 +76,7 @@ class Admin_Helper {
 
 				$changelog_data[] = array(
 					'title'       => $post->title->rendered,
-					'date'        => date( 'l F j, Y', strtotime( $post->date ) ),
+					'date'        => gmdate( 'l F j, Y', strtotime( $post->date ) ),
 					'description' => $post->content->rendered,
 					'link'        => $post->link,
 				);

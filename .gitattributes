@@ -31,8 +31,17 @@
 *.gif binary
 *.jar binary
 *.jpg binary
+*.jpeg binary
 *.png binary
 *.ttf binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.zip binary
+*.7z binary
+*.pyc binary
 
 # Ignore Git Commands
 package-lock.json 	-diff

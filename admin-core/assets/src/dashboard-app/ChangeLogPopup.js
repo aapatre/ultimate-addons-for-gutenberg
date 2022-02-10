@@ -32,7 +32,7 @@ const ChangeLogPopup = () =>{
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1"
               >
-                <Popover.Panel className="absolute z-10 left-0 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
+                <Popover.Panel className="absolute z-10 left-[-4rem] transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
                   <div className="rounded-[0.2rem] shadow-lg ring-1 ring-black ring-opacity-5 overflow-y-auto max-h-screen">
                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       {dynamicUAGChangelogRSSFeed.map( ( item, index ) => {

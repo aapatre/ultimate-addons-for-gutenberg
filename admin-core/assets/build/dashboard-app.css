@@ -590,8 +590,8 @@ select {
 }.inset-y-0 {
   top: 0px;
   bottom: 0px;
-}.left-0 {
-  left: 0px;
+}.left-\[-4rem\] {
+  left: -4rem;
 }.right-0 {
   right: 0px;
 }.z-10 {

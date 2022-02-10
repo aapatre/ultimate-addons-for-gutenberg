@@ -95,13 +95,13 @@ const SelectedFontFamilies = () => {
                     minMenuHeight = { 70 }
                     isSearchable={true}
                     className={`mt-4 focus:ring-wpcolor uag-font-select-${enableSelectedFontFamilies}`}
-					theme={(theme) => ({
+					theme={( theme ) => ( {
 						...theme,
 						colors: {
 						  ...theme.colors,
 						  primary: '#6104ff',
 						},
-					  })}
+					  } )}
                 />
             </div>
             <div>

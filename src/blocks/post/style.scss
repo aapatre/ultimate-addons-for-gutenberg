@@ -146,10 +146,38 @@
 		}
 	}
 
-	.uagb-post-grid-byline {
+	.uagb-post__text {
+
+		&.uagb-post__taxonomy {
+			display: inline-flex;
+			flex-direction: row;
+			align-items: flex-end;
+			padding: 0.25rem;
+
+			&.highlighted {
+				background: #3182ce;
+				color: #fff;
+				border-radius: 0.25rem;
+
+				a {
+					color: #fff;
+				}
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+	}
+
+	.uagb-post-grid-byline,
+	.uagb-post__taxonomy {
 		text-transform: capitalize;
-		font-size: 11px;
-		letter-spacing: 1px;
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 23px;
+		text-decoration: none;
 		margin-bottom: 15px;
 	}
 
@@ -158,6 +186,7 @@
 	.uagb-post-grid-byline a:active {
 		color: inherit;
 		font-size: inherit;
+		text-decoration: none;
 	}
 
 	.uagb-post__title a,

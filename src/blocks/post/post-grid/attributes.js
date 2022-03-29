@@ -713,6 +713,10 @@ const attributes = {
 		default : 'px',
 		isUAGStyle: true,
 	},
+	isPreview: {
+		type: 'boolean',
+		default: false,
+	},
 	postsOffset: {
 		type    : 'number',
 		default : 0,
@@ -727,7 +731,7 @@ const attributes = {
 	},
 	hideTaxonomyIcon                : {
 		type    : 'boolean',
-		default : false,
+		default : true,
 	},
 	highlightedTextColor: {
 		type    : 'string',

@@ -8,7 +8,7 @@ const attributes = {
 		type: 'string',
 		default: 'not_set',
 	},
-    // 
+    // Editor and editor settings.
     title: {
         type: 'string',
     },

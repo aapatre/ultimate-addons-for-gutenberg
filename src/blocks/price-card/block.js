@@ -8,6 +8,8 @@ import { registerBlockType } from '@wordpress/blocks';
 import './style.scss';
 import edit from './edit';
 import save from './save';
+import attributes from './attributes';
+
 
 registerBlockType( 'uagb/price-card', {
     title: __( 'Price Card', 'ultimate-addons-for-gutenberg' ), // Block title.

@@ -41,6 +41,7 @@ import './blocks/forms/child-blocks/date/block.js';
 import './blocks/forms/child-blocks/accept/block.js';
 import './blocks/icon-list/block.js';
 import './blocks/icon-list-child/block.js';
+import './blocks/price-card/block.js';
 import './blocks/price-list/block.js';
 import './blocks/price-list-child/block.js';
 import './blocks/social-share/block.js';

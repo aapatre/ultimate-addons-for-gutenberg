@@ -17,7 +17,7 @@ registerBlockType( 'uagb/price-card', {
     icon: UAGB_Block_Icons.restaurant_menu, // Block icon.
     keywords: [ __( 'price' ), __( 'card' ), __( 'uag' ) ], // Keywords for the block.
     category: uagb_blocks_info.category,    // Block category.
-    attributes: {}, // Block attributes.
+    attributes, // Block attributes.
     edit,
     save,
     example: {

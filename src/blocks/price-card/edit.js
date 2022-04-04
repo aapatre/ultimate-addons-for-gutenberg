@@ -14,3 +14,4 @@ const Settings = lazy( () =>
 const Render = lazy( () =>
 	import( /* webpackChunkName: "chunks/price-list/render" */ './render' )
 );
+

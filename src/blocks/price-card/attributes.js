@@ -35,11 +35,11 @@ const attributes = {
         type: 'string',
         default: 'Small'
     },
-    smallMediumText: {
+    mediumVariantText: {
         type: 'string',
         default: 'Small'
     },
-    smallLargeText: {
+    largeVariantText: {
         type: 'string',
         default: 'Small'
     },

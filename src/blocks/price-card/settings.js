@@ -31,6 +31,8 @@ const Settings = ( props ) => {
 	const { setAttributes, attributes, deviceType } = props;
 
     const {
+        classMigrate,
+        block_id,
         title,
         description,
         image,

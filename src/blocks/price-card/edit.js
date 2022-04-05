@@ -45,6 +45,21 @@ const UAGBPriceCardEdit = ( props ) => {
 
     }, [] );
 
+    // The following 2 useEffect hooks are responsible for rendering styling.
+
+	useEffect( () => {
+		const blockStyling = styling( props );
+
+		addBlockEditorDynamicStyles( 'uagb-price-card-style-' + props.clientId.substr( 0, 8 ), blockStyling );
+	}, [ props ] );
+
+	useEffect( () => {
+		// Replacement for componentDidUpdate.
+		const blockStyling = styling( props );
+
+		addBlockEditorDynamicStyles( 'uagb-price-card-style-' + props.clientId.substr( 0, 8 ), blockStyling );
+	}, [deviceType] );
+
     return(
         <Suspense fallback={ lazyLoader() }>
             <Settings parentProps={ props } />

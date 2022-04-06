@@ -6,6 +6,7 @@ import { __ } from '@wordpress/i18n';
 import { select } from '@wordpress/data';
 import Range from '@Components/range/Range.js';
 import ResponsiveSlider from '@Components/responsive-slider';
+import ResponsiveSelectControl from '@Components/responsive-select';
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
 import SpacingControl from '@Components/spacing-control';
 import MultiButtonsControl from '@Components/multi-buttons-control';
@@ -52,7 +53,7 @@ const Settings = ( props ) => {
 	 */
 	const onSelectImage = ( media ) => {
 		if ( ! media || ! media.url ) {
-			setAttributes( { image: null } );
+			setAttributes( { image: '' } );
 			return;
 		}
 
@@ -60,7 +61,7 @@ const Settings = ( props ) => {
 			return;
 		}
 
-		setAttributes( { image: media } );
+		setAttributes( { image: media.url } );
 	};
 
     /*
@@ -82,7 +83,7 @@ const Settings = ( props ) => {
 					/>
 				</UAGAdvancedPanelBody>
 				<UAGAdvancedPanelBody title='Variations' initialOpen= { true }>
-					
+					{/* <ResponsiveSelectControl /> */}
 				</UAGAdvancedPanelBody>
 			</>
         );

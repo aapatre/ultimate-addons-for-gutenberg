@@ -34,8 +34,8 @@ export default function save( props ) {
 				`uagb-block-${ block_id }`,
         ) }>
             {/* If image isn't empty */}
-            { image && image !== '' && image.url &&
-                <img src={ image.url } alt="catalog item" />
+            { image &&
+                <img src={ image } alt="catalog item" />
             }
 
             {/* Title */}
@@ -49,13 +49,6 @@ export default function save( props ) {
                 tagName='p'
                 value={ description }
             />
-
-            <div>
-                <span>{ __( 'Variant: ', 'ultimate-addons-for-gutenberg' ) }</span>
-                <select>
-                    
-                </select>
-            </div>
 
         </div>
     );

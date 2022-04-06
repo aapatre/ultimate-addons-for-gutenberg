@@ -19,7 +19,7 @@ import UAGPresets from '@Components/presets';
 
 import { InspectorControls } from '@wordpress/block-editor';
 
-import { SelectControl, Icon, ToggleControl } from '@wordpress/components';
+import { SelectControl, Icon, ToggleControl, TextControl } from '@wordpress/components';
 
 
 
@@ -83,21 +83,52 @@ const Settings = ( props ) => {
 					/>
 				</UAGAdvancedPanelBody>
 				<UAGAdvancedPanelBody title='Variations' initialOpen= { true }>
+					
+					{/* Small variant setings */}
 					<ToggleControl
-						label = {__( 'Small variant exists?' )}
+						label = {__( 'Small variant exists?', 'ultimate-addons-for-gutenberg' )}
 						checked = {smallVariantExists}
-						onChange = { () => setAttributes( {smallVariantExists: !smallVariantExists } )}
+						onChange = { () => setAttributes( { smallVariantExists: !smallVariantExists } )}
 					/>
+
+					{ smallVariantExists &&
+						<TextControl
+							label = { __( 'Small variant name:', 'ultimate-addons-for-gutenberg' ) }
+							value = {smallVariantText}
+							onChange = { value => setAttributes( { smallVariantText: value } ) }
+						/>
+					}
+
+					{/* Medium variant settings */}
 					<ToggleControl
-						label = {__( 'Medium variant exists?' )}
+						label = {__( 'Medium variant exists?', 'ultimate-addons-for-gutenberg' )}
 						checked = {mediumVariantExists}
 						onChange = { () => setAttributes( {mediumVariantExists: !mediumVariantExists } )}
 					/>
+
+					{ mediumVariantExists &&
+						<TextControl
+							label = { __( 'Medium variant name:', 'ultimate-addons-for-gutenberg' ) }
+							value = {mediumVariantText}
+							onChange = { value => setAttributes( { mediumVariantText: value } ) }
+						/>
+					}
+
+					{/* Large variant settings */}
 					<ToggleControl
-						label = {__( 'Large variant exists?' )}
+						label = {__( 'Large variant exists?', 'ultimate-addons-for-gutenberg' )}
 						checked = {largeVariantExists}
 						onChange = { () => setAttributes( {largeVariantExists: !largeVariantExists } )}
 					/>
+
+					{ largeVariantExists &&
+						<TextControl
+							label = { __( 'Large variant name:', 'ultimate-addons-for-gutenberg' ) }
+							value = {largeVariantText}
+							onChange = { value => setAttributes( { largeVariantText: value } ) }
+						/>
+					}
+
 				</UAGAdvancedPanelBody>
 			</>
         );

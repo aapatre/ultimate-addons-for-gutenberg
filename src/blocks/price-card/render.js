@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React, { useLayoutEffect, useMemo } from 'react';
-import { InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
 import styles from './editor.lazy.scss';
 import { useDeviceType } from '@Controls/getPreviewType';
 
@@ -15,7 +16,7 @@ const Render = ( props ) => {
 
     props = props.parentProps;
 	const deviceType = useDeviceType();
-	const { className, attributes } = props;
+	const { className, attributes, setAttributes } = props;
 
     const {
         classMigrate,
@@ -43,6 +44,21 @@ const Render = ( props ) => {
             { image && image !== '' && image.url &&
                 <img src={ image.url } alt="catalog item" />
             }
+
+            <RichText
+                tagName='h3'
+                placeholder={__( 'Enter Card Title', 'ultimate-addons-for-gutenberg' )}
+                value={ title }
+                onChange={ ( content ) => setAttributes( { title: content } ) }
+            />
+
+            <RichText
+                tagName='p'
+                placeholder={__( 'Enter Card Description', 'ultimate-addons-for-gutenberg' )}
+                value={ description }
+                onChange={ ( content ) => setAttributes( { description: content } ) }
+            />
+
         </div>
     );
 }

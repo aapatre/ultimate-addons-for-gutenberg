@@ -67,14 +67,16 @@ const Settings = ( props ) => {
 	 * Event to set Image as null while removing.
 	 */
 	const onRemoveImage = () => {
+		console.log('remove fired!');
 		setAttributes( { image: null } );
+		console.log('remove setAttributes fired!');
 	};
 
     const priceCardGeneralSettings = () => {
         return(
             <UAGAdvancedPanelBody title='Image' initialOpen= { true }>
                 <UAGImage
-                    label={ __( 'Author Image', 'ultimate-addons-for-gutenberg' ) }
+                    label={ __( 'Card Image', 'ultimate-addons-for-gutenberg' ) }
                     onSelectImage={ onSelectImage }
                     backgroundImage={ image }
                     onRemoveImage={ onRemoveImage }

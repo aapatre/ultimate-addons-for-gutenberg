@@ -19,7 +19,7 @@ import UAGPresets from '@Components/presets';
 
 import { InspectorControls } from '@wordpress/block-editor';
 
-import { SelectControl, Icon } from '@wordpress/components';
+import { SelectControl, Icon, ToggleControl } from '@wordpress/components';
 
 
 
@@ -83,7 +83,21 @@ const Settings = ( props ) => {
 					/>
 				</UAGAdvancedPanelBody>
 				<UAGAdvancedPanelBody title='Variations' initialOpen= { true }>
-					{/* <ResponsiveSelectControl /> */}
+					<ToggleControl
+						label = {__( 'Small variant exists?' )}
+						checked = {smallVariantExists}
+						onChange = { () => setAttributes( {smallVariantExists: !smallVariantExists } )}
+					/>
+					<ToggleControl
+						label = {__( 'Medium variant exists?' )}
+						checked = {mediumVariantExists}
+						onChange = { () => setAttributes( {mediumVariantExists: !mediumVariantExists } )}
+					/>
+					<ToggleControl
+						label = {__( 'Large variant exists?' )}
+						checked = {largeVariantExists}
+						onChange = { () => setAttributes( {largeVariantExists: !largeVariantExists } )}
+					/>
 				</UAGAdvancedPanelBody>
 			</>
         );

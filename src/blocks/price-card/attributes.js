@@ -37,11 +37,11 @@ const attributes = {
     },
     mediumVariantText: {
         type: 'string',
-        default: 'Small'
+        default: 'Medium'
     },
     largeVariantText: {
         type: 'string',
-        default: 'Small'
+        default: 'Large'
     },
     smallVariantExists: {
         type: 'boolean',

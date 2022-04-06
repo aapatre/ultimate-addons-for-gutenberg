@@ -5,6 +5,8 @@
 // Import block dependencies and components.
 import classnames from 'classnames';
 import { RichText } from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+
 
 export default function save( props ) {
 	const { attributes, className } = props;
@@ -47,6 +49,14 @@ export default function save( props ) {
                 tagName='p'
                 value={ description }
             />
+
+            <div>
+                <span>{ __( 'Variant: ', 'ultimate-addons-for-gutenberg' ) }</span>
+                <select>
+                    
+                </select>
+            </div>
+
         </div>
     );
 }

@@ -4,6 +4,7 @@
 
 // Import block dependencies and components.
 import classnames from 'classnames';
+import { RichText } from '@wordpress/block-editor';
 
 export default function save( props ) {
 	const { attributes, className } = props;
@@ -34,6 +35,18 @@ export default function save( props ) {
             { image.length > 0 &&
                 <img src={ image } alt="catalog item" />
             }
+
+            {/* Title */}
+            <RichText.Content
+                tagName='h3'
+                value={ title } 
+            />
+
+            {/* Description */}
+            <RichText.Content
+                tagName='p'
+                value={ description }
+            />
         </div>
     );
 }

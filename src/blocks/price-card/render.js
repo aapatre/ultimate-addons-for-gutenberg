@@ -40,7 +40,7 @@ const Render = ( props ) => {
             `uagb-block-${ block_id }`,
         ) }>
             {/* If image isn't empty */}
-            { image !== '' &&
+            { image && image !== '' && image.url &&
                 <img src={ image.url } alt="catalog item" />
             }
         </div>

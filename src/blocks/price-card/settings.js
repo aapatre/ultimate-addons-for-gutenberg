@@ -72,14 +72,19 @@ const Settings = ( props ) => {
 
     const priceCardGeneralSettings = () => {
         return(
-            <UAGAdvancedPanelBody title='Image' initialOpen= { true }>
-                <UAGImage
-                    label={ __( 'Card Image', 'ultimate-addons-for-gutenberg' ) }
-                    onSelectImage={ onSelectImage }
-                    backgroundImage={ image }
-                    onRemoveImage={ onRemoveImage }
-			    />
-            </UAGAdvancedPanelBody>
+			<>
+				<UAGAdvancedPanelBody title='Image' initialOpen= { true }>
+					<UAGImage
+						label={ __( 'Card Image', 'ultimate-addons-for-gutenberg' ) }
+						onSelectImage={ onSelectImage }
+						backgroundImage={ image }
+						onRemoveImage={ onRemoveImage }
+					/>
+				</UAGAdvancedPanelBody>
+				<UAGAdvancedPanelBody title='Variations' initialOpen= { true }>
+					
+				</UAGAdvancedPanelBody>
+			</>
         );
     }
 

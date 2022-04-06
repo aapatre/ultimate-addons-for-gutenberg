@@ -19,7 +19,7 @@ import UAGPresets from '@Components/presets';
 
 import { InspectorControls } from '@wordpress/block-editor';
 
-import { SelectControl, Icon, ToggleControl, TextControl } from '@wordpress/components';
+import { SelectControl, Icon, ToggleControl, TextControl, __experimentalNumberControl as NumberControl } from '@wordpress/components';
 
 
 
@@ -92,12 +92,27 @@ const Settings = ( props ) => {
 					/>
 
 					{ smallVariantExists &&
-						<TextControl
-							label = { __( 'Small variant name:', 'ultimate-addons-for-gutenberg' ) }
-							value = {smallVariantText}
-							onChange = { value => setAttributes( { smallVariantText: value } ) }
-						/>
+						<>
+							<TextControl
+								label = { __( 'Small variant name:', 'ultimate-addons-for-gutenberg' ) }
+								value = {smallVariantText}
+								onChange = { value => setAttributes( { smallVariantText: value } ) }
+							/>
+
+							<NumberControl
+								label = { __( 'Price for the small variant:', 'ultimate-addons-for-gutenberg' ) }
+								isDragEnabled
+								isShiftStepEnabled
+								min = { 0 }
+								shiftStep = { 0.1 }
+								step = { 0.01 }
+								value = { priceSmall }
+								onChange = { value => setAttributes( { priceSmall: value } ) }
+							/>
+						</>
 					}
+
+					<hr />
 
 					{/* Medium variant settings */}
 					<ToggleControl
@@ -107,12 +122,27 @@ const Settings = ( props ) => {
 					/>
 
 					{ mediumVariantExists &&
-						<TextControl
-							label = { __( 'Medium variant name:', 'ultimate-addons-for-gutenberg' ) }
-							value = {mediumVariantText}
-							onChange = { value => setAttributes( { mediumVariantText: value } ) }
-						/>
+						<>
+							<TextControl
+								label = { __( 'Medium variant name:', 'ultimate-addons-for-gutenberg' ) }
+								value = {mediumVariantText}
+								onChange = { value => setAttributes( { mediumVariantText: value } ) }
+							/>
+
+							<NumberControl
+								label = { __( 'Price for the medium variant:', 'ultimate-addons-for-gutenberg' ) }
+								isDragEnabled
+								isShiftStepEnabled
+								min = { 0 }
+								shiftStep = { 0.1 }
+								step = { 0.01 }
+								value = { priceMedium }
+								onChange = { value => setAttributes( { priceMedium: value } ) }
+							/>
+						</>
 					}
+
+					<hr />
 
 					{/* Large variant settings */}
 					<ToggleControl
@@ -122,12 +152,27 @@ const Settings = ( props ) => {
 					/>
 
 					{ largeVariantExists &&
-						<TextControl
-							label = { __( 'Large variant name:', 'ultimate-addons-for-gutenberg' ) }
-							value = {largeVariantText}
-							onChange = { value => setAttributes( { largeVariantText: value } ) }
-						/>
+						<>
+							<TextControl
+								label = { __( 'Large variant name:', 'ultimate-addons-for-gutenberg' ) }
+								value = {largeVariantText}
+								onChange = { value => setAttributes( { largeVariantText: value } ) }
+							/>
+
+							<NumberControl
+								label = { __( 'Price for the large variant:', 'ultimate-addons-for-gutenberg' ) }
+								isDragEnabled
+								isShiftStepEnabled
+								min = { 0 }
+								shiftStep = { 0.1 }
+								step = { 0.01 }
+								value = { priceLarge }
+								onChange = { value => setAttributes( { priceLarge: value } ) }
+							/>
+						</>
 					}
+
+					<hr />
 
 				</UAGAdvancedPanelBody>
 			</>

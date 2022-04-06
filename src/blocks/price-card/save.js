@@ -33,7 +33,7 @@ export default function save( props ) {
         ) }>
             {/* If image isn't empty */}
             { image && image !== '' && image.url &&
-                <img src={ image } alt="catalog item" />
+                <img src={ image.url } alt="catalog item" />
             }
 
             {/* Title */}

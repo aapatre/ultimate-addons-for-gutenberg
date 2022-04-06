@@ -9,10 +9,10 @@ import lazyLoader from '@Controls/lazy-loader';
 import { useDeviceType } from '@Controls/getPreviewType';
 import addBlockEditorDynamicStyles from '@Controls/addBlockEditorDynamicStyles';
 const Settings = lazy( () =>
-	import( /* webpackChunkName: "chunks/price-list/settings" */ './settings' )
+	import( /* webpackChunkName: "chunks/price-card/settings" */ './settings' )
 );
 const Render = lazy( () =>
-	import( /* webpackChunkName: "chunks/price-list/render" */ './render' )
+	import( /* webpackChunkName: "chunks/price-card/render" */ './render' )
 );
 
 const UAGBPriceCardEdit = ( props ) => {
@@ -61,10 +61,12 @@ const UAGBPriceCardEdit = ( props ) => {
 	}, [deviceType] );
 
     return(
-        <Suspense fallback={ lazyLoader() }>
-            <Settings parentProps={ props } />
-            <Render parentProps={ props } /> 
-        </Suspense>
+        <>
+            <Suspense fallback={ lazyLoader() }>
+                <Settings parentProps={ props } />
+                <Render parentProps={ props } /> 
+            </Suspense>
+        </>
     );
 
 };

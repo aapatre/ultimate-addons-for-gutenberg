@@ -32,7 +32,7 @@ export default function save( props ) {
 				`uagb-block-${ block_id }`,
         ) }>
             {/* If image isn't empty */}
-            { image.length > 0 &&
+            { image && image !== '' && image.url &&
                 <img src={ image } alt="catalog item" />
             }
 

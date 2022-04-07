@@ -68,7 +68,7 @@ const Settings = ( props ) => {
 	 * Event to set Image as null while removing.
 	 */
 	const onRemoveImage = () => {
-		setAttributes( { image: null } );
+		setAttributes( { image: '' } );
 	};
 
     const priceCardGeneralSettings = () => {

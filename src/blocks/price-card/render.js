@@ -16,7 +16,7 @@ const Render = ( props ) => {
 
     props = props.parentProps;
 	const deviceType = useDeviceType();
-	const { className, attributes, setAttributes } = props;
+	const { className, clientId, attributes, setAttributes } = props;
     let [countOfVariants, setCountOfVariants] = useState( 0 );
 
     const {
@@ -94,6 +94,26 @@ const Render = ( props ) => {
                         <span>{largeVariantText}:</span>
                         <strong><span> {priceLarge}</span></strong>
                     </h4>
+                </>
+            }
+
+            {/* If more variants exist, render a dropdown selector to see the price of the product. */}
+            { countOfVariants > 1 &&
+                <>
+                    <label htmlFor={ 'uagb-price-card-variant-selector-' + clientId.substr( 0, 8 ) } >
+                        { __( 'Choose variant: ', 'ultimate-addons-for-gutenberg' ) }
+                    </label>
+                    <select name={ 'uagb-price-card-variant-selector-' + clientId.substr( 0, 8 ) } >
+                        { smallVariantExists &&
+                            <option value={smallVariantText}>{smallVariantText}</option>
+                        }
+                        { mediumVariantExists &&
+                            <option value={mediumVariantText}>{mediumVariantText}</option>
+                        }
+                        { largeVariantExists &&
+                            <option value={largeVariantText}>{largeVariantText}</option>
+                        }
+                    </select>
                 </>
             }
 

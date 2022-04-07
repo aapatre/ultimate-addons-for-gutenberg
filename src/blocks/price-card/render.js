@@ -104,6 +104,7 @@ const Render = ( props ) => {
                         { __( 'Choose variant: ', 'ultimate-addons-for-gutenberg' ) }
                     </label>
                     <select name={ 'uagb-price-card-variant-selector-' + clientId.substr( 0, 8 ) } >
+                        <option selected disabled hidden>{ __( 'Select variant', 'ultimate-addons-for-gutenberg' ) }</option>
                         { smallVariantExists &&
                             <option value={smallVariantText}>{smallVariantText}</option>
                         }
